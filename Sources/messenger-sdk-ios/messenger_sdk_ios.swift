@@ -1,6 +1,8 @@
-public struct messenger_sdk_ios {
-    public private(set) var text = "Hello, World!"
+import DeskproFramework
 
-    public init() {
+struct messenger_sdk_ios {
+    private(set) var text = "Hello, World!"
+
+    init() {
     }
 }
