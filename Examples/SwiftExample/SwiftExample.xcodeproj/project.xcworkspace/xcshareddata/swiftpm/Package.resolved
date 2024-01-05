@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "messenger-sdk-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/deskpro/messenger-sdk-ios.git",
+      "state" : {
+        "revision" : "657f73a507bd72e17ce340dd2e8b68f24d2889c6",
+        "version" : "0.0.1"
+      }
+    }
+  ],
+  "version" : 2
+}
