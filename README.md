@@ -96,3 +96,8 @@ Commit message for a fix
 fix: DP-432 Fix minor typos in the Deskpro description (#41)
 
 Fixes #41, DP-432
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/deskpro/messenger-sdk-ios/tags).
+
