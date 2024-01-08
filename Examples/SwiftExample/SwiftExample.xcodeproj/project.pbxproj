@@ -387,7 +387,7 @@
 			repositoryURL = "https://github.com/deskpro/messenger-sdk-ios.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.1;
+				minimumVersion = 0.0.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
