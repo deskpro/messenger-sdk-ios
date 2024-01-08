@@ -10,7 +10,7 @@ import WebKit
 import _Concurrency
 import _StringProcessing
 public class DeskPro {
-  public init(messengerConfig: DeskproFramework.MessengerConfig)
+  public init(messengerConfig: DeskproFramework.MessengerConfig, containingViewController: UIKit.UIViewController)
   public func test() -> Swift.String
   public func loginUser(user: DeskproFramework.User, deskProCallback: DeskproFramework.DeskProStatusCallback)
   public func updateUser(user: DeskproFramework.User, deskProCallback: DeskproFramework.DeskProStatusCallback)
@@ -39,28 +39,15 @@ public protocol DeskProStatusCallback {
 }
 public class PresentBuilder {
   public var url: Swift.String
-  public init(url: Swift.String)
+  public init(url: Swift.String, containingViewController: UIKit.UIViewController?)
   public func chatHistory(chatId: Swift.Int) -> DeskproFramework.PresentBuilder
   public func article(articleId: Swift.Int) -> DeskproFramework.PresentBuilder
   public func comments() -> DeskproFramework.PresentBuilder
   public func show()
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class CustomWebView : UIKit.UIViewController {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) public func configureURL(_ url: Foundation.URL)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @objc deinit
-}
-extension DeskproFramework.CustomWebView : WebKit.WKNavigationDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation!)
-}
-extension DeskproFramework.CustomWebView : WebKit.WKUIDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, runJavaScriptAlertPanelWithMessage message: Swift.String, initiatedByFrame frame: WebKit.WKFrameInfo, completionHandler: @escaping () -> Swift.Void)
-}
-extension DeskproFramework.CustomWebView : WebKit.WKScriptMessageHandler {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func userContentController(_ userContentController: WebKit.WKUserContentController, didReceive message: WebKit.WKScriptMessage)
+extension UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public func presentMessenger(urlString: Swift.String)
 }
 public class MessengerConfig {
   public var appUrl: Swift.String

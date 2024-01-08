@@ -230,8 +230,6 @@ using UInt = size_t;
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
-@import UIKit;
-@import WebKit;
 #endif
 
 #endif
@@ -252,36 +250,6 @@ using UInt = size_t;
 #endif
 
 #if defined(__OBJC__)
-@class NSString;
-@class NSBundle;
-@class NSCoder;
-
-SWIFT_CLASS("_TtC16DeskproFramework13CustomWebView")
-@interface CustomWebView : UIViewController
-- (void)viewDidLoad;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-@class WKWebView;
-@class WKFrameInfo;
-
-@interface CustomWebView (SWIFT_EXTENSION(DeskproFramework)) <WKUIDelegate>
-- (void)webView:(WKWebView * _Nonnull)webView runJavaScriptAlertPanelWithMessage:(NSString * _Nonnull)message initiatedByFrame:(WKFrameInfo * _Nonnull)frame completionHandler:(void (^ _Nonnull)(void))completionHandler;
-@end
-
-@class WKNavigation;
-
-@interface CustomWebView (SWIFT_EXTENSION(DeskproFramework)) <WKNavigationDelegate>
-- (void)webView:(WKWebView * _Nonnull)webView didFinishNavigation:(WKNavigation * _Null_unspecified)navigation;
-@end
-
-@class WKUserContentController;
-@class WKScriptMessage;
-
-@interface CustomWebView (SWIFT_EXTENSION(DeskproFramework)) <WKScriptMessageHandler>
-- (void)userContentController:(WKUserContentController * _Nonnull)userContentController didReceiveScriptMessage:(WKScriptMessage * _Nonnull)message;
-@end
 
 #endif
 #if defined(__cplusplus)
