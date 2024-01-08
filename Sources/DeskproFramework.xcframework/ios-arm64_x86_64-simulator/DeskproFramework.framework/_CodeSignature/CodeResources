@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/DeskproFramework-Swift.h</key>
 		<data>
-		/CzReis8+RTMjFow5s9HzZCydxU=
+		GAgj80wNEcEWtAzs9fdIoYoZJiI=
 		</data>
 		<key>Headers/DeskproFramework.h</key>
 		<data>
@@ -18,11 +18,11 @@
 		</data>
 		<key>Modules/DeskproFramework.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		ykfxDhbnyNNqplKGKX9mF4hVTGg=
+		vDEwxSoAfIGKOlSzlo5deztJSxg=
 		</data>
 		<key>Modules/DeskproFramework.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		hUunK1E796vC8iltDqfYwz3oa7M=
+		QPDy0iMCb71dKIyjLh5eMCDsJHg=
 		</data>
 		<key>Modules/DeskproFramework.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -30,19 +30,19 @@
 		</data>
 		<key>Modules/DeskproFramework.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		hUunK1E796vC8iltDqfYwz3oa7M=
+		QPDy0iMCb71dKIyjLh5eMCDsJHg=
 		</data>
 		<key>Modules/DeskproFramework.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		nRmBqdiTXfRO85X8+m1MNzaQPf4=
+		7HiJe7Hk+PR3TDwWzPkSYVGbRFg=
 		</data>
 		<key>Modules/DeskproFramework.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		ykfxDhbnyNNqplKGKX9mF4hVTGg=
+		vDEwxSoAfIGKOlSzlo5deztJSxg=
 		</data>
 		<key>Modules/DeskproFramework.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		PtQ03eaNac5wZ/tPIOFIMU/0pGg=
+		Y4zWcKFHDoKj4rkzxPkt7qF6qDo=
 		</data>
 		<key>Modules/DeskproFramework.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -50,11 +50,11 @@
 		</data>
 		<key>Modules/DeskproFramework.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		PtQ03eaNac5wZ/tPIOFIMU/0pGg=
+		Y4zWcKFHDoKj4rkzxPkt7qF6qDo=
 		</data>
 		<key>Modules/DeskproFramework.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		FpNKa3Y/NuOineRysU0bgxYJVHk=
+		YYpYVX+EXpDgoD8/oYQ9DqkmvmM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -67,7 +67,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/YaIUkEtyoEQb7TDiVYfzZOU1ad//U3mmzaEUz4rQBI=
+			LivH0zqgUmoM5qQqGvZKNL0+H1qy3XQJ//4qX1J2NIw=
 			</data>
 		</dict>
 		<key>Headers/DeskproFramework.h</key>
@@ -81,14 +81,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xNIMC6M+pOi04NZyAUM2wfejaNLhmoIAT+iqXQhPBWI=
+			oeBamq6RZ3W29KqEC63uLo2XJecLTVFWnTePaoRGtiI=
 			</data>
 		</dict>
 		<key>Modules/DeskproFramework.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			adnDL5wuYFZocUWTaOcQnE6DLJjO2xMQZM7gh6zmboA=
+			gvvE+ba6GEgGOvSC3w8exJkj+tXxVPT+fV5ABGO2f/0=
 			</data>
 		</dict>
 		<key>Modules/DeskproFramework.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -102,28 +102,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			adnDL5wuYFZocUWTaOcQnE6DLJjO2xMQZM7gh6zmboA=
+			gvvE+ba6GEgGOvSC3w8exJkj+tXxVPT+fV5ABGO2f/0=
 			</data>
 		</dict>
 		<key>Modules/DeskproFramework.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			LiS0/5L8SEqfQhKSF/upKAASdpbyeVbkbQYFdf2LlhU=
+			gItvlINwQRLdVBRpZTtjsvzwy0xC9BKXLEqNOEFISNg=
 			</data>
 		</dict>
 		<key>Modules/DeskproFramework.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xNIMC6M+pOi04NZyAUM2wfejaNLhmoIAT+iqXQhPBWI=
+			oeBamq6RZ3W29KqEC63uLo2XJecLTVFWnTePaoRGtiI=
 			</data>
 		</dict>
 		<key>Modules/DeskproFramework.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			akwpLQMYUNS2eNQOACvAFSpeEQz9IeVjffuaqwvzUPM=
+			o2THWpCNz0bTgdP1Vqd27nKIf246R147skhDchVKxuU=
 			</data>
 		</dict>
 		<key>Modules/DeskproFramework.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -137,14 +137,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			akwpLQMYUNS2eNQOACvAFSpeEQz9IeVjffuaqwvzUPM=
+			o2THWpCNz0bTgdP1Vqd27nKIf246R147skhDchVKxuU=
 			</data>
 		</dict>
 		<key>Modules/DeskproFramework.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			anD0e81TOe4eh8GojTv9qnvhKJTVMJzxGN3Tu9RRxkA=
+			lzSKOrwkZFIZQxt1iXPOs2ZS4oHVxX+y/wTJF/iqTxE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
