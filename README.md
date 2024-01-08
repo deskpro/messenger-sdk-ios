@@ -1,3 +1,6 @@
+<img align="right" alt="Deskpro" src="https://raw.githubusercontent.com/DeskproApps/bitrix24/master/docs/assets/deskpro-logo.svg" />
+
+
 # messenger-sdk-ios
 
 ![Messenger SDK iOS SWIFT](https://img.shields.io/badge/Swift-5.7_5.8_5.9-Orange?style=flat-square)
