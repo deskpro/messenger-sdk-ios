@@ -1156,6 +1156,13 @@
             "printedName": "CustomDebugStringConvertible",
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "UITraitChangeObservable",
+            "printedName": "UITraitChangeObservable",
+            "usr": "s:5UIKit23UITraitChangeObservableP",
+            "mangledName": "$s5UIKit23UITraitChangeObservableP"
           }
         ]
       }
@@ -1164,6 +1171,41 @@
   },
   "ConstValues": [
     {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/Deskpro.swift",
+      "kind": "StringLiteral",
+      "offset": 522,
+      "length": 29,
+      "value": "\"Hello world from Messenger!\""
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/Deskpro.swift",
+      "kind": "BooleanLiteral",
+      "offset": 895,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/Deskpro.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1031,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/Deskpro.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1187,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/Deskpro.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1732,
+      "length": 1,
+      "value": "0"
+    },
+    {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/PresentBuilder.swift",
       "kind": "StringLiteral",
       "offset": 261,
@@ -1171,44 +1213,268 @@
       "value": "\"\""
     },
     {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/PresentBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 561,
+      "length": 25,
+      "value": "\"\/chat_history\/\""
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/PresentBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 585,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/PresentBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 695,
+      "length": 23,
+      "value": "\"\/article\/\""
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/PresentBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 717,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/PresentBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 814,
+      "length": 11,
+      "value": "\"\/comments\""
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 331,
+      "length": 2,
+      "value": "58"
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "FloatLiteral",
+      "offset": 334,
+      "length": 5,
+      "value": "255.0"
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 348,
+      "length": 3,
+      "value": "141"
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "FloatLiteral",
+      "offset": 352,
+      "length": 5,
+      "value": "255.0"
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 365,
+      "length": 3,
+      "value": "222"
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "FloatLiteral",
+      "offset": 369,
+      "length": 5,
+      "value": "255.0"
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "FloatLiteral",
+      "offset": 383,
+      "length": 3,
+      "value": "1.0"
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 785,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1115,
+      "length": 4,
+      "value": "true"
+    },
+    {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "StringLiteral",
-      "offset": 3876,
+      "offset": 1456,
+      "length": 13,
+      "value": "\"iosListener\""
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "StringLiteral",
+      "offset": 1707,
+      "length": 18,
+      "value": "\"Url not provided\""
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "FloatLiteral",
+      "offset": 2297,
+      "length": 3,
+      "value": "0.6"
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "FloatLiteral",
+      "offset": 2521,
+      "length": 3,
+      "value": "0.3"
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2577,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2823,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2976,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "StringLiteral",
+      "offset": 3263,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "StringLiteral",
+      "offset": 3364,
+      "length": 4,
+      "value": "\"OK\""
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3436,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "StringLiteral",
+      "offset": 3733,
+      "length": 53,
+      "value": "\"WKWebView has received a message: `\""
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "StringLiteral",
+      "offset": 3784,
+      "length": 1,
+      "value": "\"`\""
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4051,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "StringLiteral",
+      "offset": 4254,
+      "length": 17,
+      "value": "\"Error: \""
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "StringLiteral",
+      "offset": 4270,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "StringLiteral",
+      "offset": 4339,
+      "length": 19,
+      "value": "\"Result: \""
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "StringLiteral",
+      "offset": 4357,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4676,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "StringLiteral",
+      "offset": 4759,
       "length": 14,
       "value": "\"closeWebView\""
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "StringLiteral",
-      "offset": 3876,
+      "offset": 4759,
       "length": 14,
       "value": "\"closeWebView\""
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "StringLiteral",
-      "offset": 3957,
+      "offset": 4840,
       "length": 1338,
       "value": "\" window.DESKPRO_MESSENGER_CONNECTION = {\n   parentMethods: {\n     ready: async () => {\n             \/\/ Note how childMethods.init is called in response to the ready event.\n       const data = await window.DESKPRO_MESSENGER_CONNECTION.childMethods?.init(\"B0ED0B34-8507-4248-8738-0B0D80A6F7E9\", {\n         showLauncherButton: false,\n         user: window.DESKPRO_MESSENGER_OPTIONS?.userInfo,\n         launcherButtonConfig: undefined, \/\/ Optional,\n         messengerAppConfig: undefined,\n         parentViewHeight: \"fullscreen\",\n       }); \/\/new argument here\n\n       if (data) {\n         const { side, offsetBottom, offsetSide, width, height } = data;\n         \/\/ setViewportPosition({ side, offsetBottom, offsetSide });\n         \/\/ setViewportSize({ width, height });\n       }\n     },\n     open: async () => {\n       \/\/ setViewportSize({ width, height });\n     },\n     close: async () => {\n        window.webkit.messageHandlers.iosListener.postMessage(\"\""
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "StringLiteral",
-      "offset": 4949,
+      "offset": 5832,
       "length": 34,
       "value": "\"\") \/\/triggers `didReceive message`\n        \/\/alert('close.') \/\/triggers `runJavaScriptAlertPanelWithMessage`\n     },\n     getViewHeight: async () => {\n        return 'fullscreen'\n     },\n   },\n     \/\/ This object will be assigned by the messenger app on ready, so you can call the childMethods from the parent.\n   childMethods: undefined,\n };\""
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "StringLiteral",
-      "offset": 5338,
+      "offset": 6221,
       "length": 202,
       "value": "\"window.DESKPRO_MESSENGER_CONNECTION.childMethods.open('B0ED0B34-8507-4248-8738-0B0D80A6F7E9', {\n      parentViewHeight: 'fullscreen',\n      showLauncherButton: false,\n    });\""
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "StringLiteral",
-      "offset": 5584,
+      "offset": 6467,
       "length": 203,
       "value": "\"window.DESKPRO_MESSENGER_CONNECTION.childMethods.close('B0ED0B34-8507-4248-8738-0B0D80A6F7E9', {\n      parentViewHeight: 'fullscreen',\n      showLauncherButton: false,\n    });\""
     }
