@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/deskpro/messenger-sdk-ios.git",
       "state" : {
-        "revision" : "8be673468b716ef7ad53c6c465cffde7022df348",
-        "version" : "0.0.2"
+        "revision" : "acd128d826940bf1ef4fbd551cc5afd5369196b9",
+        "version" : "0.0.4"
       }
     }
   ],
