@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/DeskproFramework-Swift.h</key>
 		<data>
-		T8BAuqSEYAoYwqjWptQZLJiNk/Y=
+		JTC6xhRjNB/4kfdA1rza6EF4TOI=
 		</data>
 		<key>Headers/DeskproFramework.h</key>
 		<data>
@@ -14,27 +14,27 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		SBPZQU7J8+vpUwE6Y4qA6iJHNM8=
+		m4mSRCqCp46LQE9D5nyLnZ05PAM=
 		</data>
 		<key>Modules/DeskproFramework.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		p/h+QV16FXWNOVuvs53Tn/RYBTQ=
+		o4j1AIBwLSUGwz1fTUFF2Nm+apA=
 		</data>
 		<key>Modules/DeskproFramework.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		On/Ods5eTcijUAbdv0daHH/uCJs=
+		zOKzMZPVId04oKwFLkZ/3I50/Qc=
 		</data>
 		<key>Modules/DeskproFramework.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		RW2JxkZUK1RNlCW9T4nVG8oCYfI=
+		0Qh45Q++Ktuk7s4/pUVsRFTSAzo=
 		</data>
 		<key>Modules/DeskproFramework.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		On/Ods5eTcijUAbdv0daHH/uCJs=
+		zOKzMZPVId04oKwFLkZ/3I50/Qc=
 		</data>
 		<key>Modules/DeskproFramework.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		jK0avmSmvzRbiIXelnaffjB2pBc=
+		IVJS2Bj6wKSsPpN3wuPOYSpujG4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -47,7 +47,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1f3Il1YVAy1yompNfpCWOXOK50UFUG3bR3Oyd3rbrKs=
+			qAgV7y2U4qGBcD+O/wDs59FWSxpDbBSKIg8MaWmxttk=
 			</data>
 		</dict>
 		<key>Headers/DeskproFramework.h</key>
@@ -61,35 +61,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			QQ+3khYMsVywk/qgbo8y8pLsGerWUmYgs9WU6BVm6mM=
+			56/3C1YwTISDe8dWpdlWwSl00zM48dydAJ1mn107D1U=
 			</data>
 		</dict>
 		<key>Modules/DeskproFramework.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UTA+YjaBfCToqBLfuVpTkdi5dkOjPtEOvSx7lWY9jaI=
+			b/rDPKtKu7WirS/QvhLY01iiyBRmKWBrlySLSgsnWG4=
 			</data>
 		</dict>
 		<key>Modules/DeskproFramework.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			U/FzZfbI62tC1pJVn+Nu/HbkUSPT3VltyyTc8AG8nfM=
+			WuIgEfS7F74qZwUKBP8HG3M3emeBMZwZWcEtpAlnMVE=
 			</data>
 		</dict>
 		<key>Modules/DeskproFramework.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UTA+YjaBfCToqBLfuVpTkdi5dkOjPtEOvSx7lWY9jaI=
+			b/rDPKtKu7WirS/QvhLY01iiyBRmKWBrlySLSgsnWG4=
 			</data>
 		</dict>
 		<key>Modules/DeskproFramework.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OMuPeDgJuBKbnvX9M2CqGKPchndV31+bJigG9/tmiuE=
+			LhVbr5YwKd37glzcU6zdOli8Vebs1IPw1fptObtDrcQ=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
