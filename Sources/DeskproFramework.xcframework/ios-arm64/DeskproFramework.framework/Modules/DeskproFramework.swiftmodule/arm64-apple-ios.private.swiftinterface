@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
-// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name DeskproFramework
+// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name DeskproFramework
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 @_exported import DeskproFramework
 import Foundation
@@ -9,12 +9,11 @@ import UIKit
 import WebKit
 import _Concurrency
 import _StringProcessing
-import _SwiftConcurrencyShims
 public class DeskPro {
   public init(messengerConfig: DeskproFramework.MessengerConfig, containingViewController: UIKit.UIViewController)
   public func test() -> Swift.String
-  public func loginUser(user: DeskproFramework.User, deskProCallback: any DeskproFramework.DeskProStatusCallback)
-  public func updateUser(user: DeskproFramework.User, deskProCallback: any DeskproFramework.DeskProStatusCallback)
+  public func loginUser(user: DeskproFramework.User, deskProCallback: DeskproFramework.DeskProStatusCallback)
+  public func updateUser(user: DeskproFramework.User, deskProCallback: DeskproFramework.DeskProStatusCallback)
   public func logout() -> Swift.Bool
   public func setPushRegistrationToken(deviceToken: Swift.String) -> Swift.Bool
   public func isDeskProPushNotification(pushNotification: DeskproFramework.PushNotificationData) -> Swift.Bool
@@ -37,6 +36,17 @@ public class DeskPro {
 public protocol DeskProStatusCallback {
   func onFailure(deskProError: DeskproFramework.DeskProError)
   func onSuccess()
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class DeskproButton : UIKit.UIButton {
+  @_Concurrency.MainActor(unsafe) public init(size: CoreFoundation.CGFloat = 56)
+  @_Concurrency.MainActor(unsafe) public func setImage(named imageName: Swift.String, color: UIKit.UIColor? = nil)
+  @_Concurrency.MainActor(unsafe) public func setColor(_ color: UIKit.UIColor)
+  @_Concurrency.MainActor(unsafe) public func setPosition(_ position: DeskproFramework.DeskproButton.ButtonPosition, inView view: UIKit.UIView, x: CoreFoundation.CGFloat = 16, y: CoreFoundation.CGFloat = 16)
+  public enum ButtonPosition {
+    case topLeft, topRight, bottomLeft, bottomRight
+    case custom(CoreFoundation.CGPoint)
+  }
+  @objc deinit
 }
 public class PresentBuilder {
   public var url: Swift.String

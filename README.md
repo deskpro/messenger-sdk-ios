@@ -12,7 +12,7 @@ DeskPro iOS Messenger is a Chat/AI/Messaging product. You can embed a â€œwidgetâ
 
 ## Requirements
 
-- iOS 14.0+
+- iOS 11.0+
 - Swift 5.7+
 - Xcode 14.0+
 

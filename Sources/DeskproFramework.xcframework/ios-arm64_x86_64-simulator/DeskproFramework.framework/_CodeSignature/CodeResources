@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/DeskproFramework-Swift.h</key>
 		<data>
-		BojFhCpRtiHpl4BBlYBWETBZs7o=
+		0XQSA/3VsVb8hGKQe/g3tgHLcFI=
 		</data>
 		<key>Headers/DeskproFramework.h</key>
 		<data>
@@ -14,51 +14,51 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		OwmIS03ygfur8CE7bcdo62TOTUU=
+		BJ8f0t36OFLVAwSMp25sU3OYsDM=
 		</data>
 		<key>Modules/DeskproFramework.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		o4j1AIBwLSUGwz1fTUFF2Nm+apA=
+		q4H4ml2tDWtU1asdBgMIozbAXKE=
 		</data>
 		<key>Modules/DeskproFramework.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		zCjzWhROMn0SwaYYdfYGYdC+SkU=
+		DzwsRBTQ+oBCDRAXsH2IXcv0Sd0=
 		</data>
 		<key>Modules/DeskproFramework.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		tevM4WxSe6bd4pWPy0oc3nSrVL8=
+		nU+VvDTC+m8pfUG7wyaoqfYvDok=
 		</data>
 		<key>Modules/DeskproFramework.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		zCjzWhROMn0SwaYYdfYGYdC+SkU=
+		DzwsRBTQ+oBCDRAXsH2IXcv0Sd0=
 		</data>
 		<key>Modules/DeskproFramework.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		I1UmSiR9y+W4viBmVlucZve9vt4=
+		LXjZy1Qx6w9I+IPEVu3jHGtS+SQ=
 		</data>
 		<key>Modules/DeskproFramework.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		o4j1AIBwLSUGwz1fTUFF2Nm+apA=
+		q4H4ml2tDWtU1asdBgMIozbAXKE=
 		</data>
 		<key>Modules/DeskproFramework.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		0rNjh0OMqzhVSrRwqaRkGkDfqxk=
+		Xmd7vlg17UOhmdj0Uo/JqI1IXHM=
 		</data>
 		<key>Modules/DeskproFramework.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		kwHpSVi0luqn6DIkrEsqoP4xmXg=
+		FyhyFJqugvHGUWtCYR1ziK98rf0=
 		</data>
 		<key>Modules/DeskproFramework.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		0rNjh0OMqzhVSrRwqaRkGkDfqxk=
+		Xmd7vlg17UOhmdj0Uo/JqI1IXHM=
 		</data>
 		<key>Modules/DeskproFramework.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Tvjmqwr7zFRuEG1LD4WyiboF+VE=
+		pLxRpNkilxwH+qq6GSHDN9zicX4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		UrjJs2fjHqPQfNwjDfgobo6yrvU=
+		eqHyBGcIaJ/38M3rrk1mdpmC7wk=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -67,7 +67,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			GVIEhGC43wJUdbLwv+dBbtju2N8PrU0uppuoODSm1JA=
+			0JRUQcKKFZpadZrVRK6Lz5rrEW5Vnxkc8NfghLacfjY=
 			</data>
 		</dict>
 		<key>Headers/DeskproFramework.h</key>
@@ -81,77 +81,77 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			56/3C1YwTISDe8dWpdlWwSl00zM48dydAJ1mn107D1U=
+			POCT9mSQq8/94c0AtSsSW/ZC5V3bhpZXKN2iOma/q8c=
 			</data>
 		</dict>
 		<key>Modules/DeskproFramework.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3LT9fN0CiIa4/RW2uHHfylkuzumAoxunUV/VIDJJ4l4=
+			UzaeakemS2qRfF02U5ZdesSUIW0BkGXK2ALJrKUCNFg=
 			</data>
 		</dict>
 		<key>Modules/DeskproFramework.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9B/HUwjchxthVtQfw0eakckqjgib7zHUTsHVxFCnRf0=
+			d4IhYWp1HTHQwaETc4DRacfuJ1t3C2UPc6Q/JKd8rxw=
 			</data>
 		</dict>
 		<key>Modules/DeskproFramework.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3LT9fN0CiIa4/RW2uHHfylkuzumAoxunUV/VIDJJ4l4=
+			UzaeakemS2qRfF02U5ZdesSUIW0BkGXK2ALJrKUCNFg=
 			</data>
 		</dict>
 		<key>Modules/DeskproFramework.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			l3V+lalXUUMHEXi2K0m/XzhM3H/ll54pfU9HmqL70sw=
+			KUSgtkeYvAbu0muVLUIRp+jQgmQ01DW3Ws/fsGMa8fo=
 			</data>
 		</dict>
 		<key>Modules/DeskproFramework.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			56/3C1YwTISDe8dWpdlWwSl00zM48dydAJ1mn107D1U=
+			POCT9mSQq8/94c0AtSsSW/ZC5V3bhpZXKN2iOma/q8c=
 			</data>
 		</dict>
 		<key>Modules/DeskproFramework.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			GUzKC7FljLGVIrFcqsmYZXrnUbjVyhll82nxc7i8njw=
+			9Sn3Ms1cP/Zjihb/LWvWh8yy06FkU/f75djm9CXhf+E=
 			</data>
 		</dict>
 		<key>Modules/DeskproFramework.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			TIH9aATsi75AtQJBUT2MjDguFN4jon2cn8TQZA9PjIM=
+			9F2rrfVgQzwEcYRFR4DPMDfyx5uF/dQ46ifHrNtpCUI=
 			</data>
 		</dict>
 		<key>Modules/DeskproFramework.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			GUzKC7FljLGVIrFcqsmYZXrnUbjVyhll82nxc7i8njw=
+			9Sn3Ms1cP/Zjihb/LWvWh8yy06FkU/f75djm9CXhf+E=
 			</data>
 		</dict>
 		<key>Modules/DeskproFramework.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Zcuig8OF4sMdcmisDvId+KdnmFeQ/uBDquRstIJSob8=
+			QYtKetIJ0BaN5/WU+lzFx1brh6A6e6B+MAmvRqD7oR4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			arP6CHKjOrUMNqNJLAbtZJrD+6yCt5eCm461JEwfdgE=
+			Hi49DBhI8r1AVjCvWMwU6EFB8KrvenO3HcnQbIoHFD0=
 			</data>
 		</dict>
 	</dict>

@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "messenger-sdk-ios",
-    platforms: [.iOS(.v14)],
+    platforms: [.iOS(.v11)],
     products: [
         .library(
             name: "messenger-sdk-ios",
