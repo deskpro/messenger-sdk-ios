@@ -254,8 +254,10 @@ using UInt = size_t;
 #if defined(__OBJC__)
 @class NSCoder;
 
+/// DeskproButton is a customizable, rounded UIButton subclass that provides an easy way to create a floating action button with shadow effects and configurable positioning within a view. It supports setting images, colors, and position with minimal setup.
 SWIFT_CLASS("_TtC16DeskproFramework13DeskproButton")
 @interface DeskproButton : UIButton
+/// Required initializer for decoding the button from a nib or storyboard.
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
@@ -526,8 +528,10 @@ using UInt = size_t;
 #if defined(__OBJC__)
 @class NSCoder;
 
+/// DeskproButton is a customizable, rounded UIButton subclass that provides an easy way to create a floating action button with shadow effects and configurable positioning within a view. It supports setting images, colors, and position with minimal setup.
 SWIFT_CLASS("_TtC16DeskproFramework13DeskproButton")
 @interface DeskproButton : UIButton
+/// Required initializer for decoding the button from a nib or storyboard.
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end

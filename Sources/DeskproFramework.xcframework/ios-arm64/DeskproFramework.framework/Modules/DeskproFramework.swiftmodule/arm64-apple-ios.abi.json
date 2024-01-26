@@ -48,7 +48,8 @@
             "mangledName": "$s16DeskproFramework7DeskProC15messengerConfig24containingViewControllerAcA09MessengerF0C_So06UIViewI0Ctcfc",
             "moduleName": "DeskproFramework",
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "init_kind": "Designated"
           },
@@ -76,8 +77,8 @@
           },
           {
             "kind": "Function",
-            "name": "loginUser",
-            "printedName": "loginUser(user:deskProCallback:)",
+            "name": "setUserInfo",
+            "printedName": "setUserInfo(user:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -89,17 +90,11 @@
                 "name": "User",
                 "printedName": "DeskproFramework.User",
                 "usr": "s:16DeskproFramework4UserC"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "DeskProStatusCallback",
-                "printedName": "DeskproFramework.DeskProStatusCallback",
-                "usr": "s:16DeskproFramework21DeskProStatusCallbackP"
               }
             ],
             "declKind": "Func",
-            "usr": "s:16DeskproFramework7DeskProC9loginUser4user04deskD8CallbackyAA0F0C_AA0cd6StatusI0_ptF",
-            "mangledName": "$s16DeskproFramework7DeskProC9loginUser4user04deskD8CallbackyAA0F0C_AA0cd6StatusI0_ptF",
+            "usr": "s:16DeskproFramework7DeskProC11setUserInfo4useryAA0F0C_tF",
+            "mangledName": "$s16DeskproFramework7DeskProC11setUserInfo4useryAA0F0C_tF",
             "moduleName": "DeskproFramework",
             "declAttributes": [
               "AccessControl",
@@ -109,41 +104,8 @@
           },
           {
             "kind": "Function",
-            "name": "updateUser",
-            "printedName": "updateUser(user:deskProCallback:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "User",
-                "printedName": "DeskproFramework.User",
-                "usr": "s:16DeskproFramework4UserC"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "DeskProStatusCallback",
-                "printedName": "DeskproFramework.DeskProStatusCallback",
-                "usr": "s:16DeskproFramework21DeskProStatusCallbackP"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:16DeskproFramework7DeskProC10updateUser4user04deskD8CallbackyAA0F0C_AA0cd6StatusI0_ptF",
-            "mangledName": "$s16DeskproFramework7DeskProC10updateUser4user04deskD8CallbackyAA0F0C_AA0cd6StatusI0_ptF",
-            "moduleName": "DeskproFramework",
-            "declAttributes": [
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "logout",
-            "printedName": "logout()",
+            "name": "forgetUser",
+            "printedName": "forgetUser()",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -153,8 +115,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:16DeskproFramework7DeskProC6logoutSbyF",
-            "mangledName": "$s16DeskproFramework7DeskProC6logoutSbyF",
+            "usr": "s:16DeskproFramework7DeskProC10forgetUserSbyF",
+            "mangledName": "$s16DeskproFramework7DeskProC10forgetUserSbyF",
             "moduleName": "DeskproFramework",
             "declAttributes": [
               "AccessControl",
@@ -165,7 +127,7 @@
           {
             "kind": "Function",
             "name": "setPushRegistrationToken",
-            "printedName": "setPushRegistrationToken(deviceToken:)",
+            "printedName": "setPushRegistrationToken(token:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -181,8 +143,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:16DeskproFramework7DeskProC24setPushRegistrationToken06deviceH0SbSS_tF",
-            "mangledName": "$s16DeskproFramework7DeskProC24setPushRegistrationToken06deviceH0SbSS_tF",
+            "usr": "s:16DeskproFramework7DeskProC24setPushRegistrationToken5tokenSbSS_tF",
+            "mangledName": "$s16DeskproFramework7DeskProC24setPushRegistrationToken5tokenSbSS_tF",
             "moduleName": "DeskproFramework",
             "declAttributes": [
               "AccessControl",
@@ -337,7 +299,8 @@
         "mangledName": "$s16DeskproFramework7DeskProC",
         "moduleName": "DeskproFramework",
         "declAttributes": [
-          "AccessControl"
+          "AccessControl",
+          "RawDocComment"
         ]
       },
       {
@@ -348,107 +311,6 @@
         "moduleName": "DeskproFramework",
         "declAttributes": [
           "RawDocComment"
-        ]
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "User",
-        "printedName": "User",
-        "declKind": "Class",
-        "usr": "s:16DeskproFramework4UserC",
-        "mangledName": "$s16DeskproFramework4UserC",
-        "moduleName": "DeskproFramework",
-        "declAttributes": [
-          "AccessControl"
-        ],
-        "hasMissingDesignatedInitializers": true
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "PushNotificationData",
-        "printedName": "PushNotificationData",
-        "declKind": "Class",
-        "usr": "s:16DeskproFramework20PushNotificationDataC",
-        "mangledName": "$s16DeskproFramework20PushNotificationDataC",
-        "moduleName": "DeskproFramework",
-        "declAttributes": [
-          "AccessControl"
-        ],
-        "hasMissingDesignatedInitializers": true
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "DeskProError",
-        "printedName": "DeskProError",
-        "declKind": "Class",
-        "usr": "s:16DeskproFramework12DeskProErrorC",
-        "mangledName": "$s16DeskproFramework12DeskProErrorC",
-        "moduleName": "DeskproFramework",
-        "declAttributes": [
-          "AccessControl"
-        ],
-        "hasMissingDesignatedInitializers": true
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "DeskProStatusCallback",
-        "printedName": "DeskProStatusCallback",
-        "children": [
-          {
-            "kind": "Function",
-            "name": "onFailure",
-            "printedName": "onFailure(deskProError:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "DeskProError",
-                "printedName": "DeskproFramework.DeskProError",
-                "usr": "s:16DeskproFramework12DeskProErrorC"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:16DeskproFramework21DeskProStatusCallbackP9onFailure04deskD5ErroryAA0cdJ0C_tF",
-            "mangledName": "$s16DeskproFramework21DeskProStatusCallbackP9onFailure04deskD5ErroryAA0cdJ0C_tF",
-            "moduleName": "DeskproFramework",
-            "genericSig": "<τ_0_0 where τ_0_0 : DeskproFramework.DeskProStatusCallback>",
-            "sugared_genericSig": "<Self where Self : DeskproFramework.DeskProStatusCallback>",
-            "protocolReq": true,
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "onSuccess",
-            "printedName": "onSuccess()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:16DeskproFramework21DeskProStatusCallbackP9onSuccessyyF",
-            "mangledName": "$s16DeskproFramework21DeskProStatusCallbackP9onSuccessyyF",
-            "moduleName": "DeskproFramework",
-            "genericSig": "<τ_0_0 where τ_0_0 : DeskproFramework.DeskProStatusCallback>",
-            "sugared_genericSig": "<Self where Self : DeskproFramework.DeskProStatusCallback>",
-            "protocolReq": true,
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Protocol",
-        "usr": "s:16DeskproFramework21DeskProStatusCallbackP",
-        "mangledName": "$s16DeskproFramework21DeskProStatusCallbackP",
-        "moduleName": "DeskproFramework",
-        "declAttributes": [
-          "AccessControl"
         ]
       },
       {
@@ -491,7 +353,8 @@
             "moduleName": "DeskproFramework",
             "declAttributes": [
               "Custom",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "init_kind": "Designated"
           },
@@ -533,7 +396,8 @@
             "moduleName": "DeskproFramework",
             "declAttributes": [
               "Custom",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -560,7 +424,8 @@
             "moduleName": "DeskproFramework",
             "declAttributes": [
               "Custom",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -607,7 +472,8 @@
             "moduleName": "DeskproFramework",
             "declAttributes": [
               "Custom",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -820,7 +686,8 @@
             "mangledName": "$s16DeskproFramework0A6ButtonC0C8PositionO",
             "moduleName": "DeskproFramework",
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ]
           },
           {
@@ -864,6 +731,7 @@
         "declAttributes": [
           "Custom",
           "AccessControl",
+          "RawDocComment",
           "ObjC"
         ],
         "superclassUsr": "c:objc(cs)UIButton",
@@ -946,6 +814,684 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "PresentCoordinator",
+        "printedName": "PresentCoordinator",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(containingViewController:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PresentCoordinator",
+                "printedName": "DeskproFramework.PresentCoordinator",
+                "usr": "s:16DeskproFramework18PresentCoordinatorC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:16DeskproFramework18PresentCoordinatorC24containingViewControllerACSo06UIViewG0C_tcfc",
+            "mangledName": "$s16DeskproFramework18PresentCoordinatorC24containingViewControllerACSo06UIViewG0C_tcfc",
+            "moduleName": "DeskproFramework",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:16DeskproFramework18PresentCoordinatorC",
+        "mangledName": "$s16DeskproFramework18PresentCoordinatorC",
+        "moduleName": "DeskproFramework",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "DeskproFramework",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "DeskproFramework",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "User",
+        "printedName": "User",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "name",
+            "printedName": "name",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:16DeskproFramework4UserC4nameSSSgvp",
+            "mangledName": "$s16DeskproFramework4UserC4nameSSSgvp",
+            "moduleName": "DeskproFramework",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16DeskproFramework4UserC4nameSSSgvg",
+                "mangledName": "$s16DeskproFramework4UserC4nameSSSgvg",
+                "moduleName": "DeskproFramework",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16DeskproFramework4UserC4nameSSSgvs",
+                "mangledName": "$s16DeskproFramework4UserC4nameSSSgvs",
+                "moduleName": "DeskproFramework",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16DeskproFramework4UserC4nameSSSgvM",
+                "mangledName": "$s16DeskproFramework4UserC4nameSSSgvM",
+                "moduleName": "DeskproFramework",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "firstName",
+            "printedName": "firstName",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:16DeskproFramework4UserC9firstNameSSSgvp",
+            "mangledName": "$s16DeskproFramework4UserC9firstNameSSSgvp",
+            "moduleName": "DeskproFramework",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16DeskproFramework4UserC9firstNameSSSgvg",
+                "mangledName": "$s16DeskproFramework4UserC9firstNameSSSgvg",
+                "moduleName": "DeskproFramework",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16DeskproFramework4UserC9firstNameSSSgvs",
+                "mangledName": "$s16DeskproFramework4UserC9firstNameSSSgvs",
+                "moduleName": "DeskproFramework",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16DeskproFramework4UserC9firstNameSSSgvM",
+                "mangledName": "$s16DeskproFramework4UserC9firstNameSSSgvM",
+                "moduleName": "DeskproFramework",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "lastName",
+            "printedName": "lastName",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:16DeskproFramework4UserC8lastNameSSSgvp",
+            "mangledName": "$s16DeskproFramework4UserC8lastNameSSSgvp",
+            "moduleName": "DeskproFramework",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16DeskproFramework4UserC8lastNameSSSgvg",
+                "mangledName": "$s16DeskproFramework4UserC8lastNameSSSgvg",
+                "moduleName": "DeskproFramework",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16DeskproFramework4UserC8lastNameSSSgvs",
+                "mangledName": "$s16DeskproFramework4UserC8lastNameSSSgvs",
+                "moduleName": "DeskproFramework",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16DeskproFramework4UserC8lastNameSSSgvM",
+                "mangledName": "$s16DeskproFramework4UserC8lastNameSSSgvM",
+                "moduleName": "DeskproFramework",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "email",
+            "printedName": "email",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:16DeskproFramework4UserC5emailSSSgvp",
+            "mangledName": "$s16DeskproFramework4UserC5emailSSSgvp",
+            "moduleName": "DeskproFramework",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16DeskproFramework4UserC5emailSSSgvg",
+                "mangledName": "$s16DeskproFramework4UserC5emailSSSgvg",
+                "moduleName": "DeskproFramework",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16DeskproFramework4UserC5emailSSSgvs",
+                "mangledName": "$s16DeskproFramework4UserC5emailSSSgvs",
+                "moduleName": "DeskproFramework",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16DeskproFramework4UserC5emailSSSgvM",
+                "mangledName": "$s16DeskproFramework4UserC5emailSSSgvM",
+                "moduleName": "DeskproFramework",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(name:firstName:lastName:email:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "User",
+                "printedName": "DeskproFramework.User",
+                "usr": "s:16DeskproFramework4UserC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:16DeskproFramework4UserC4name9firstName04lastF05emailACSSSg_A3Htcfc",
+            "mangledName": "$s16DeskproFramework4UserC4name9firstName04lastF05emailACSSSg_A3Htcfc",
+            "moduleName": "DeskproFramework",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "User",
+                "printedName": "DeskproFramework.User",
+                "usr": "s:16DeskproFramework4UserC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:16DeskproFramework4UserC4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s16DeskproFramework4UserC4fromACs7Decoder_p_tKcfc",
+            "moduleName": "DeskproFramework",
+            "implicit": true,
+            "declAttributes": [
+              "Required"
+            ],
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:16DeskproFramework4UserC6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s16DeskproFramework4UserC6encode2toys7Encoder_p_tKF",
+            "moduleName": "DeskproFramework",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:16DeskproFramework4UserC",
+        "mangledName": "$s16DeskproFramework4UserC",
+        "moduleName": "DeskproFramework",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "DeskproFramework",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
         "name": "PresentBuilder",
         "printedName": "PresentBuilder",
         "children": [
@@ -967,7 +1513,8 @@
             "moduleName": "DeskproFramework",
             "declAttributes": [
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "hasStorage": true,
             "accessors": [
@@ -1037,7 +1584,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(url:containingViewController:)",
+            "printedName": "init(url:appId:coordinator:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -1053,32 +1600,31 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "UIKit.UIViewController?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "UIViewController",
-                    "printedName": "UIKit.UIViewController",
-                    "usr": "c:objc(cs)UIViewController"
-                  }
-                ],
-                "usr": "s:Sq"
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PresentCoordinator",
+                "printedName": "DeskproFramework.PresentCoordinator",
+                "usr": "s:16DeskproFramework18PresentCoordinatorC"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:16DeskproFramework14PresentBuilderC3url24containingViewControllerACSS_So06UIViewH0CSgtcfc",
-            "mangledName": "$s16DeskproFramework14PresentBuilderC3url24containingViewControllerACSS_So06UIViewH0CSgtcfc",
+            "usr": "s:16DeskproFramework14PresentBuilderC3url5appId11coordinatorACSS_SSAA0C11CoordinatorCtcfc",
+            "mangledName": "$s16DeskproFramework14PresentBuilderC3url5appId11coordinatorACSS_SSAA0C11CoordinatorCtcfc",
             "moduleName": "DeskproFramework",
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "init_kind": "Designated"
           },
           {
             "kind": "Function",
             "name": "chatHistory",
-            "printedName": "chatHistory(chatId:)",
+            "printedName": "chatHistory(_:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -1094,18 +1640,19 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:16DeskproFramework14PresentBuilderC11chatHistory0E2IdACSi_tF",
-            "mangledName": "$s16DeskproFramework14PresentBuilderC11chatHistory0E2IdACSi_tF",
+            "usr": "s:16DeskproFramework14PresentBuilderC11chatHistoryyACSiF",
+            "mangledName": "$s16DeskproFramework14PresentBuilderC11chatHistoryyACSiF",
             "moduleName": "DeskproFramework",
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
           {
             "kind": "Function",
             "name": "article",
-            "printedName": "article(articleId:)",
+            "printedName": "article(_:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -1121,11 +1668,12 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:16DeskproFramework14PresentBuilderC7article0E2IdACSi_tF",
-            "mangledName": "$s16DeskproFramework14PresentBuilderC7article0E2IdACSi_tF",
+            "usr": "s:16DeskproFramework14PresentBuilderC7articleyACSiF",
+            "mangledName": "$s16DeskproFramework14PresentBuilderC7articleyACSiF",
             "moduleName": "DeskproFramework",
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -1146,7 +1694,8 @@
             "mangledName": "$s16DeskproFramework14PresentBuilderC8commentsACyF",
             "moduleName": "DeskproFramework",
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -1166,7 +1715,8 @@
             "mangledName": "$s16DeskproFramework14PresentBuilderC4showyyF",
             "moduleName": "DeskproFramework",
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           }
@@ -1196,6 +1746,30 @@
         "printedName": "WebKit",
         "declKind": "Import",
         "moduleName": "DeskproFramework"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "DeskproFramework",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "PushNotificationData",
+        "printedName": "PushNotificationData",
+        "declKind": "Class",
+        "usr": "s:16DeskproFramework20PushNotificationDataC",
+        "mangledName": "$s16DeskproFramework20PushNotificationDataC",
+        "moduleName": "DeskproFramework",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "hasMissingDesignatedInitializers": true
       },
       {
         "kind": "Import",
@@ -1536,7 +2110,8 @@
             "mangledName": "$s16DeskproFramework15MessengerConfigC6appUrl0E2Id0E3KeyACSS_S2SSgtcfc",
             "moduleName": "DeskproFramework",
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "init_kind": "Designated"
           }
@@ -1546,119 +2121,8 @@
         "mangledName": "$s16DeskproFramework15MessengerConfigC",
         "moduleName": "DeskproFramework",
         "declAttributes": [
-          "AccessControl"
-        ]
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "UIViewController",
-        "printedName": "UIViewController",
-        "children": [
-          {
-            "kind": "Function",
-            "name": "presentMessenger",
-            "printedName": "presentMessenger(urlString:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:So16UIViewControllerC16DeskproFrameworkE16presentMessenger9urlStringySS_tF",
-            "mangledName": "$sSo16UIViewControllerC16DeskproFrameworkE16presentMessenger9urlStringySS_tF",
-            "moduleName": "DeskproFramework",
-            "declAttributes": [
-              "Custom"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Class",
-        "usr": "c:objc(cs)UIViewController",
-        "moduleName": "UIKit",
-        "isOpen": true,
-        "intro_iOS": "2.0",
-        "objc_name": "UIViewController",
-        "declAttributes": [
-          "Available",
-          "ObjC",
-          "NonSendable",
-          "Custom",
-          "Dynamic"
-        ],
-        "superclassUsr": "c:objc(cs)UIResponder",
-        "isExternal": true,
-        "inheritsConvenienceInitializers": true,
-        "superclassNames": [
-          "UIKit.UIResponder",
-          "ObjectiveC.NSObject"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CVarArg",
-            "printedName": "CVarArg",
-            "usr": "s:s7CVarArgP",
-            "mangledName": "$ss7CVarArgP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObservingPublishing",
-            "printedName": "_KeyValueCodingAndObservingPublishing",
-            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
-            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObserving",
-            "printedName": "_KeyValueCodingAndObserving",
-            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
-            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomStringConvertible",
-            "printedName": "CustomStringConvertible",
-            "usr": "s:s23CustomStringConvertibleP",
-            "mangledName": "$ss23CustomStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomDebugStringConvertible",
-            "printedName": "CustomDebugStringConvertible",
-            "usr": "s:s28CustomDebugStringConvertibleP",
-            "mangledName": "$ss28CustomDebugStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Sendable",
-            "printedName": "Sendable",
-            "usr": "s:s8SendableP",
-            "mangledName": "$ss8SendableP"
-          }
+          "AccessControl",
+          "RawDocComment"
         ]
       }
     ],
@@ -1666,186 +2130,242 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/DeskproButton.swift",
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/UI\/DeskproButton.swift",
       "kind": "IntegerLiteral",
-      "offset": 186,
+      "offset": 516,
       "length": 2,
       "value": "56"
     },
     {
-      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/DeskproButton.swift",
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/UI\/DeskproButton.swift",
       "kind": "IntegerLiteral",
-      "offset": 226,
+      "offset": 631,
       "length": 2,
       "value": "56"
     },
     {
-      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/DeskproButton.swift",
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/UI\/DeskproButton.swift",
       "kind": "IntegerLiteral",
-      "offset": 1757,
+      "offset": 2624,
       "length": 2,
       "value": "16"
     },
     {
-      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/DeskproButton.swift",
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/UI\/DeskproButton.swift",
       "kind": "IntegerLiteral",
-      "offset": 1774,
+      "offset": 2641,
       "length": 2,
       "value": "16"
     },
     {
-      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/DeskproButton.swift",
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/UI\/DeskproButton.swift",
       "kind": "StringLiteral",
-      "offset": 122,
+      "offset": 380,
       "length": 13,
       "value": "\"DeskproFramework.DeskproButton\""
     },
     {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/PresentCoordinator.swift",
+      "kind": "StringLiteral",
+      "offset": 466,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/PresentBuilder.swift",
       "kind": "StringLiteral",
-      "offset": 287,
+      "offset": 841,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "IntegerLiteral",
-      "offset": 185,
+      "offset": 384,
       "length": 2,
       "value": "58"
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "FloatLiteral",
-      "offset": 188,
+      "offset": 387,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "IntegerLiteral",
-      "offset": 202,
+      "offset": 401,
       "length": 3,
       "value": "141"
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "FloatLiteral",
-      "offset": 206,
+      "offset": 405,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "IntegerLiteral",
-      "offset": 219,
+      "offset": 418,
       "length": 3,
       "value": "222"
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "FloatLiteral",
-      "offset": 223,
+      "offset": 422,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "FloatLiteral",
-      "offset": 237,
+      "offset": 436,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "IntegerLiteral",
-      "offset": 287,
+      "offset": 486,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "FloatLiteral",
-      "offset": 289,
+      "offset": 488,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "IntegerLiteral",
-      "offset": 303,
+      "offset": 502,
       "length": 3,
       "value": "100"
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "FloatLiteral",
-      "offset": 307,
+      "offset": 506,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "IntegerLiteral",
-      "offset": 320,
+      "offset": 519,
       "length": 3,
       "value": "192"
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "FloatLiteral",
-      "offset": 324,
+      "offset": 523,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "FloatLiteral",
-      "offset": 338,
+      "offset": 537,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "StringLiteral",
-      "offset": 5433,
+      "offset": 928,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "StringLiteral",
+      "offset": 8237,
       "length": 14,
       "value": "\"closeWebView\""
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "StringLiteral",
-      "offset": 5433,
+      "offset": 8274,
+      "length": 12,
+      "value": "\"reloadPage\""
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "StringLiteral",
+      "offset": 8310,
+      "length": 13,
+      "value": "\"getUserInfo\""
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "StringLiteral",
+      "offset": 8351,
+      "length": 17,
+      "value": "\"getUserJwtToken\""
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "StringLiteral",
+      "offset": 8237,
       "length": 14,
       "value": "\"closeWebView\""
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "StringLiteral",
-      "offset": 5514,
-      "length": 1218,
-      "value": "\" window.DESKPRO_MESSENGER_CONNECTION = {\n   parentMethods: {\n     ready: async () => {\n       const data = await window.DESKPRO_MESSENGER_CONNECTION.childMethods?.init('1', {\n         showLauncherButton: false,\n         user: window.DESKPRO_MESSENGER_OPTIONS?.userInfo,\n         launcherButtonConfig: undefined, \/\/ Optional,\n         messengerAppConfig: undefined,\n         parentViewHeight: \"fullscreen\",\n         open: true\n       });\n\n       if (data) {\n         const { side, offsetBottom, offsetSide, width, height } = data;\n         \/\/ setViewportPosition({ side, offsetBottom, offsetSide });\n         \/\/ setViewportSize({ width, height });\n       }\n     },\n     open: async () => {\n       \/\/ setViewportSize({ width, height });\n     },\n     close: async () => {\n        window.webkit.messageHandlers.iosListener.postMessage(\"\""
+      "offset": 8274,
+      "length": 12,
+      "value": "\"reloadPage\""
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "StringLiteral",
-      "offset": 6386,
-      "length": 34,
-      "value": "\"\") \/\/triggers `didReceive message`\n        \/\/alert('close.') \/\/triggers `runJavaScriptAlertPanelWithMessage`\n     },\n     getViewHeight: async () => {\n        return 'fullscreen'\n     },\n   },\n     \/\/ This object will be assigned by the messenger app on ready, so you can call the childMethods from the parent.\n   childMethods: undefined,\n };\""
+      "offset": 8310,
+      "length": 13,
+      "value": "\"getUserInfo\""
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "StringLiteral",
-      "offset": 6775,
-      "length": 167,
-      "value": "\"window.DESKPRO_MESSENGER_CONNECTION.childMethods.open('1', {\n      parentViewHeight: 'fullscreen',\n      showLauncherButton: false,\n    });\""
+      "offset": 8351,
+      "length": 17,
+      "value": "\"getUserJwtToken\""
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "StringLiteral",
-      "offset": 6986,
-      "length": 168,
-      "value": "\"window.DESKPRO_MESSENGER_CONNECTION.childMethods.close('1', {\n      parentViewHeight: 'fullscreen',\n      showLauncherButton: false,\n    });\""
+      "offset": 8444,
+      "length": 2040,
+      "value": "\"window.DESKPRO_MESSENGER_OPTIONS = {\n    showLauncherButton: false,\n    openOnInit: true,\n    userInfo: { name: \"john\" },\n    signedUserInfo: undefined,\n    launcherButtonConfig: undefined,\n    messengerAppConfig: undefined,\n    urlCacheableConfig: undefined,\n};\n\nwindow.DESKPRO_MESSENGER_CONNECTION = {\n  parentMethods: {\n    ready: async (messengerId) => {\n      const data = await window.DESKPRO_MESSENGER_CONNECTION.childMethods?.init(messengerId, {\n        showLauncherButton: DESKPRO_MESSENGER_OPTIONS.showLauncherButton,\n        user: window.DESKPRO_MESSENGER_OPTIONS?.userInfo,\n        launcherButtonConfig: DESKPRO_MESSENGER_OPTIONS.launcherButtonConfig,\n        messengerAppConfig: DESKPRO_MESSENGER_OPTIONS.messengerAppConfig,\n        parentViewHeight: \"fullscreen\",\n        open: DESKPRO_MESSENGER_OPTIONS.openOnInit,\n      });\n\n      if (data) {\n        const { side, offsetBottom, offsetSide, width, height } = data;\n      }\n    },\n    getViewHeight: async (messengerId) => {\n      return \"fullscreen\";\n    },\n    getUserInfo: async (messengerId) => {\n        window.webkit.messageHandlers.iosListener.postMessage(\"\""
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "StringLiteral",
+      "offset": 9728,
+      "length": 2,
+      "value": "\"\")\n        .then(response => {\n            \/\/alert(response);\n        })\n    },\n    getUserJwtToken: async (messengerId) => {\n        window.webkit.messageHandlers.iosListener.postMessage(\"\""
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "StringLiteral",
+      "offset": 9980,
+      "length": 2,
+      "value": "\"\")\n        .then(response => {\n            \/\/alert(response);\n        })\n    },\n    open: async (messengerId, data) => {\n        const { width, height } = data;\n    },\n    close: async (messengerId, data) => {\n        window.webkit.messageHandlers.iosListener.postMessage(\"\""
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "StringLiteral",
+      "offset": 10325,
+      "length": 2,
+      "value": "\"\")\n    },\n    appEvent: async (messengerId, event) => {\n        \/\/alert(event.id)\n    },\n  },\n  childMethods: undefined,\n};\""
     }
   ]
 }

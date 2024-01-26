@@ -12,10 +12,9 @@ import _StringProcessing
 public class DeskPro {
   public init(messengerConfig: DeskproFramework.MessengerConfig, containingViewController: UIKit.UIViewController)
   public func test() -> Swift.String
-  public func loginUser(user: DeskproFramework.User, deskProCallback: DeskproFramework.DeskProStatusCallback)
-  public func updateUser(user: DeskproFramework.User, deskProCallback: DeskproFramework.DeskProStatusCallback)
-  public func logout() -> Swift.Bool
-  public func setPushRegistrationToken(deviceToken: Swift.String) -> Swift.Bool
+  public func setUserInfo(user: DeskproFramework.User)
+  public func forgetUser() -> Swift.Bool
+  public func setPushRegistrationToken(token: Swift.String) -> Swift.Bool
   public func isDeskProPushNotification(pushNotification: DeskproFramework.PushNotificationData) -> Swift.Bool
   public func handlePushNotification(pushNotification: DeskproFramework.PushNotificationData)
   public func present() -> DeskproFramework.PresentBuilder
@@ -23,19 +22,6 @@ public class DeskPro {
   public func getUnreadConversationCount() -> Swift.Int
   public func enableLogging()
   @objc deinit
-}
-@_hasMissingDesignatedInitializers public class User {
-  @objc deinit
-}
-@_hasMissingDesignatedInitializers public class PushNotificationData {
-  @objc deinit
-}
-@_hasMissingDesignatedInitializers public class DeskProError {
-  @objc deinit
-}
-public protocol DeskProStatusCallback {
-  func onFailure(deskProError: DeskproFramework.DeskProError)
-  func onSuccess()
 }
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class DeskproButton : UIKit.UIButton {
   @_Concurrency.MainActor(unsafe) public init(size: CoreFoundation.CGFloat = 56)
@@ -48,17 +34,31 @@ public protocol DeskProStatusCallback {
   }
   @objc deinit
 }
+public class PresentCoordinator {
+  public init(containingViewController: UIKit.UIViewController)
+  @objc deinit
+}
+public class User : Swift.Codable {
+  public var name: Swift.String?
+  public var firstName: Swift.String?
+  public var lastName: Swift.String?
+  public var email: Swift.String?
+  public init(name: Swift.String? = nil, firstName: Swift.String? = nil, lastName: Swift.String? = nil, email: Swift.String? = nil)
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
 public class PresentBuilder {
   public var url: Swift.String
-  public init(url: Swift.String, containingViewController: UIKit.UIViewController?)
-  public func chatHistory(chatId: Swift.Int) -> DeskproFramework.PresentBuilder
-  public func article(articleId: Swift.Int) -> DeskproFramework.PresentBuilder
+  public init(url: Swift.String, appId: Swift.String, coordinator: DeskproFramework.PresentCoordinator)
+  public func chatHistory(_ chatId: Swift.Int) -> DeskproFramework.PresentBuilder
+  public func article(_ articleId: Swift.Int) -> DeskproFramework.PresentBuilder
   public func comments() -> DeskproFramework.PresentBuilder
   public func show()
   @objc deinit
 }
-extension UIKit.UIViewController {
-  @_Concurrency.MainActor(unsafe) public func presentMessenger(urlString: Swift.String)
+@_hasMissingDesignatedInitializers public class PushNotificationData {
+  @objc deinit
 }
 public class MessengerConfig {
   public var appUrl: Swift.String
