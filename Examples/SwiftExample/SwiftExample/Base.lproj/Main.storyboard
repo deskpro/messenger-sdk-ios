@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -34,33 +35,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y5K-21-oKc">
-                                <rect key="frame" x="208" y="728" width="160" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="9of-l3-DPd"/>
-                                    <constraint firstAttribute="height" constant="40" id="vNE-VM-pzV"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Open Messenger"/>
-                                <connections>
-                                    <action selector="openTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DWx-MK-K21"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="UzI-FF-7q4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="M19-eX-76Y"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Y5K-21-oKc" secondAttribute="trailing" constant="25" id="Mq5-fE-0JS"/>
                             <constraint firstItem="iub-YM-rm0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="W8u-Ut-ooW"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Y5K-21-oKc" secondAttribute="bottom" constant="50" id="XqR-l0-O0A"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UzI-FF-7q4" secondAttribute="trailing" constant="25" id="jdt-HL-ibz"/>
                             <constraint firstItem="iub-YM-rm0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="q13-hQ-D4G"/>
                             <constraint firstItem="UzI-FF-7q4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="top-hW-okP"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="openBtn" destination="Y5K-21-oKc" id="RMP-WK-DZO"/>
                         <outlet property="testBtn" destination="iub-YM-rm0" id="4XK-Wr-Mbm"/>
                         <outlet property="testLbl" destination="UzI-FF-7q4" id="Ywr-jt-hhw"/>
                     </connections>
