@@ -1,7 +1,7 @@
 framework module DeskproFramework {
   umbrella header "DeskproFramework.h"
-  export *
 
+  export *
   module * { export * }
 }
 
