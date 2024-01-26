@@ -10,12 +10,10 @@ import DeskproFramework
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var openBtn: UIButton!
     @IBOutlet weak var testBtn: UIButton!
     @IBOutlet weak var testLbl: UILabel!
     
-    //let messengerConfig = MessengerConfig(appUrl: "http://178.62.74.147:3001/d/", appId: "B0ED0B34-8507-4248-8738-0B0D80A6F7E9")
-    let messengerConfig = MessengerConfig(appUrl: "https://dev-pr-12670.earthly.deskprodemo.com/deskpro-messenger/deskpro/1/d/", appId: "")
+    let messengerConfig = MessengerConfig(appUrl: "https://dev-pr-12730.earthly.deskprodemo.com/deskpro-messenger/deskpro/1/d/", appId: "1")
     
     var messenger: DeskPro?
     
@@ -23,14 +21,25 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         messenger = DeskPro(messengerConfig: messengerConfig, containingViewController: self)
+        
+        setupLauncherButton()
     }
-    
-    @IBAction func openTapped(_ sender: Any) {
-        messenger?.present().show()
-    }
-    
+
     @IBAction func testTapped(_ sender: Any) {
         testLbl.text = messenger?.test()
+    }
+    
+    private func setupLauncherButton() {
+        let floatingBtn = DeskproButton()
+        floatingBtn.setColor(.systemBlue)
+        floatingBtn.setImage(named: "messenger", color: .white)
+        floatingBtn.addTarget(self, action: #selector(floatingBtnnTapped), for: .touchUpInside)
+        self.view.addSubview(floatingBtn)
+        floatingBtn.setPosition(.bottomRight, inView: self.view)
+    }
+    
+    @objc private func floatingBtnnTapped() {
+        messenger?.present().show()
     }
 }
 
