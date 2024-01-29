@@ -24,7 +24,36 @@ Once you're in the root directory of the package, you can run the tests using th
 
 - File > Swift Packages > Add Package Dependency
 - Add `https://github.com/deskpro/messenger-sdk-ios`
-- Select "Up to Next Major" with "1.0.0"
+- Select "Up to Next Major" with "0.0.5"
+
+## Setup and Initialization
+First, import the Deskpro SDK:
+```
+import DeskproFramework
+```
+
+Then, in your ViewController:
+```
+let messengerConfig = MessengerConfig(appUrl: "YOUR_APP_URL", appId: "YOUR_APP_ID")
+var messenger: DeskPro?
+```
+
+Replace `YOUR_APP_URL` and `YOUR_APP_ID` with your app's URL and ID.
+
+The messenger variable is initialized in viewDidLoad and is responsible for handling the WebView presentation:
+```
+override func viewDidLoad() {
+    super.viewDidLoad()    
+    messenger = DeskPro(messengerConfig: messengerConfig, containingViewController: self)
+}
+```
+
+
+To trigger the WebView to open, paste this line in the desired place:
+```
+messenger?.present().show()
+```
+
 
 
 
