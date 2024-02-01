@@ -104,6 +104,34 @@
           },
           {
             "kind": "Function",
+            "name": "authorizeUser",
+            "printedName": "authorizeUser(userJwt:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:16DeskproFramework7DeskProC13authorizeUser7userJwtSbSS_tF",
+            "mangledName": "$s16DeskproFramework7DeskProC13authorizeUser7userJwtSbSS_tF",
+            "moduleName": "DeskproFramework",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "forgetUser",
             "printedName": "forgetUser()",
             "children": [
@@ -2286,84 +2314,119 @@
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "StringLiteral",
-      "offset": 8237,
+      "offset": 1382,
+      "length": 44,
+      "value": "\"var meta = document.createElement('meta');\""
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "StringLiteral",
+      "offset": 1445,
+      "length": 25,
+      "value": "\"meta.name = 'viewport';\""
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "StringLiteral",
+      "offset": 1489,
+      "length": 94,
+      "value": "\"meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';\""
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "StringLiteral",
+      "offset": 1602,
+      "length": 54,
+      "value": "\"var head = document.getElementsByTagName('head')[0];\""
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "StringLiteral",
+      "offset": 1659,
+      "length": 25,
+      "value": "\"head.appendChild(meta);\""
+    },
+    {
+      "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
+      "kind": "StringLiteral",
+      "offset": 9634,
       "length": 14,
       "value": "\"closeWebView\""
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "StringLiteral",
-      "offset": 8274,
+      "offset": 9671,
       "length": 12,
       "value": "\"reloadPage\""
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "StringLiteral",
-      "offset": 8310,
+      "offset": 9707,
       "length": 13,
       "value": "\"getUserInfo\""
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "StringLiteral",
-      "offset": 8351,
+      "offset": 9748,
       "length": 17,
       "value": "\"getUserJwtToken\""
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "StringLiteral",
-      "offset": 8237,
+      "offset": 9634,
       "length": 14,
       "value": "\"closeWebView\""
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "StringLiteral",
-      "offset": 8274,
+      "offset": 9671,
       "length": 12,
       "value": "\"reloadPage\""
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "StringLiteral",
-      "offset": 8310,
+      "offset": 9707,
       "length": 13,
       "value": "\"getUserInfo\""
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "StringLiteral",
-      "offset": 8351,
+      "offset": 9748,
       "length": 17,
       "value": "\"getUserJwtToken\""
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "StringLiteral",
-      "offset": 8444,
+      "offset": 9841,
       "length": 2040,
       "value": "\"window.DESKPRO_MESSENGER_OPTIONS = {\n    showLauncherButton: false,\n    openOnInit: true,\n    userInfo: { name: \"john\" },\n    signedUserInfo: undefined,\n    launcherButtonConfig: undefined,\n    messengerAppConfig: undefined,\n    urlCacheableConfig: undefined,\n};\n\nwindow.DESKPRO_MESSENGER_CONNECTION = {\n  parentMethods: {\n    ready: async (messengerId) => {\n      const data = await window.DESKPRO_MESSENGER_CONNECTION.childMethods?.init(messengerId, {\n        showLauncherButton: DESKPRO_MESSENGER_OPTIONS.showLauncherButton,\n        user: window.DESKPRO_MESSENGER_OPTIONS?.userInfo,\n        launcherButtonConfig: DESKPRO_MESSENGER_OPTIONS.launcherButtonConfig,\n        messengerAppConfig: DESKPRO_MESSENGER_OPTIONS.messengerAppConfig,\n        parentViewHeight: \"fullscreen\",\n        open: DESKPRO_MESSENGER_OPTIONS.openOnInit,\n      });\n\n      if (data) {\n        const { side, offsetBottom, offsetSide, width, height } = data;\n      }\n    },\n    getViewHeight: async (messengerId) => {\n      return \"fullscreen\";\n    },\n    getUserInfo: async (messengerId) => {\n        window.webkit.messageHandlers.iosListener.postMessage(\"\""
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "StringLiteral",
-      "offset": 9728,
+      "offset": 11125,
       "length": 2,
       "value": "\"\")\n        .then(response => {\n            \/\/alert(response);\n        })\n    },\n    getUserJwtToken: async (messengerId) => {\n        window.webkit.messageHandlers.iosListener.postMessage(\"\""
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "StringLiteral",
-      "offset": 9980,
+      "offset": 11377,
       "length": 2,
       "value": "\"\")\n        .then(response => {\n            \/\/alert(response);\n        })\n    },\n    open: async (messengerId, data) => {\n        const { width, height } = data;\n    },\n    close: async (messengerId, data) => {\n        window.webkit.messageHandlers.iosListener.postMessage(\"\""
     },
     {
       "filePath": "\/Users\/qsd\/Dropbox\/My Mac (QSD’s MacBook Pro)\/Desktop\/DeskproFramework\/WebView.swift",
       "kind": "StringLiteral",
-      "offset": 10325,
+      "offset": 11722,
       "length": 2,
       "value": "\"\")\n    },\n    appEvent: async (messengerId, event) => {\n        \/\/alert(event.id)\n    },\n  },\n  childMethods: undefined,\n};\""
     }

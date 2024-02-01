@@ -13,6 +13,7 @@ public class DeskPro {
   public init(messengerConfig: DeskproFramework.MessengerConfig, containingViewController: UIKit.UIViewController)
   public func test() -> Swift.String
   public func setUserInfo(user: DeskproFramework.User)
+  public func authorizeUser(userJwt: Swift.String) -> Swift.Bool
   public func forgetUser() -> Swift.Bool
   public func setPushRegistrationToken(token: Swift.String) -> Swift.Bool
   public func isDeskProPushNotification(pushNotification: DeskproFramework.PushNotificationData) -> Swift.Bool
