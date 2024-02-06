@@ -10,7 +10,7 @@ import Foundation
 ///  Configuration data class for initializing the Messenger feature in the application.
 ///
 ///  This data class holds configuration parameters required for setting up and initializing the Messenger feature within the application. The configuration includes the base URL of the Messenger service, the application ID, and the application key.
-public class MessengerConfig {
+public final class MessengerConfig {
     
     public var appUrl: String
     public var appId: String

@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
  
-///  The delegate to notify when WebView is dismissed, which is important information for PresentCoordinator.
+///  The delegate to notify when WebView is dismissed and when an event occurs, which is important information for PresentCoordinator.
 protocol WebViewDelegate: AnyObject {
     func webViewDismissed()
     func eventOccured(_ event: DeskproEvent)
@@ -21,7 +21,7 @@ extension UIColor {
 }
 
 ///  The ViewController hosting WebView for DeskPro Messenger functionality. It manages the WebView, handles WebView configuration, and sets up communication with JavaScript. It also handles WebView lifecycle events and error handling.
-class CustomWebView: UIViewController {
+final class CustomWebView: UIViewController {
     
     ///   The URL that should be loaded in WebView.
     var url: URL?
@@ -34,12 +34,6 @@ class CustomWebView: UIViewController {
     
     ///  UserDefaults utility for managing user information and JWT tokens.
     var appUserdefaults: AppUserDefaults?
-    
-    ///  Script for making the webView non-zoomable. Users are allowed to zoom anywhere in the webView and webView autozooms when keyboard appears.
-    let source: String = "var meta = document.createElement('meta');" +
-                "meta.name = 'viewport';" +
-                "meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';" +
-                "var head = document.getElementsByTagName('head')[0];" + "head.appendChild(meta);";
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +58,7 @@ class CustomWebView: UIViewController {
     }
 
     ///  Basic WebView setup.
-    private func setupWebView() {
+    private final func setupWebView() {
         webView = WKWebView(frame: view.bounds, configuration: setupWebViewConfiguration())
         webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         webView.isOpaque = false
@@ -76,7 +70,7 @@ class CustomWebView: UIViewController {
     }
     
     ///  Basic ActivityIndicator setup.
-    private func setupActivityIndicator() {
+    private final func setupActivityIndicator() {
         activityIndicator = UIActivityIndicatorView()
         activityIndicator.center = self.view.center
         activityIndicator.hidesWhenStopped = true
@@ -93,7 +87,7 @@ class CustomWebView: UIViewController {
     }
     
     ///  Basic WebView configuration. Adds the message handler which will be a key for communication with JS.
-    private func setupWebViewConfiguration() -> WKWebViewConfiguration {
+    private final func setupWebViewConfiguration() -> WKWebViewConfiguration {
         let configuration = WKWebViewConfiguration()
         if #available(iOS 14.0, *) {
             configuration.userContentController.addScriptMessageHandler(self, contentWorld: .page, name: "iosListener")
@@ -103,16 +97,16 @@ class CustomWebView: UIViewController {
         return configuration
     }
 
-    func loadUrlInWebView() {
+    final func loadUrlInWebView() {
         if let url = url {
             let request = URLRequest(url: url)
             webView.load(request)
         } else {
-            print("Url not provided")
+            dprint("Url not provided")
         }
     }
     
-    private func showActivityIndicator(show: Bool) {
+    private final func showActivityIndicator(show: Bool) {
         if show {
             activityIndicator.startAnimating()
         } else {
@@ -121,18 +115,18 @@ class CustomWebView: UIViewController {
     }
     
     ///  Preparing WebView.
-    func configure(_ url: URL, _ appId: String) {
+    final func configure(_ url: URL, _ appId: String) {
         self.url = url
         self.appId = appId
         self.appUserdefaults = AppUserDefaults(appId: appId)
     }
     
-    private func evaluateJSFromSwift(script: String) {
+    private final func evaluateJSFromSwift(script: String) {
         webView.evaluateJavaScript(script) { (result, error) in
             if let error = error {
-                print("Error: \(error)")
+                dprint("Error: \(error)")
             } else if let result = result {
-                print("Result: \(result)")
+                dprint("Result: \(result)")
             }
         }
     }
@@ -141,7 +135,7 @@ class CustomWebView: UIViewController {
 extension CustomWebView: WKNavigationDelegate {
     
     ///   We are allowing users to swipe back to navigate, but only when they leave the chat, e.g. when they tap the "Powered by Deskpro" label which leads to the Deskpro web.
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+    final func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         if let host = navigationAction.request.url?.host {
             if host.contains("deskprodemo") {
                 webView.allowsBackForwardNavigationGestures = false
@@ -153,7 +147,7 @@ extension CustomWebView: WKNavigationDelegate {
         decisionHandler(.allow)
     }
     
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+    final func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         
         self.evaluateJSFromSwift(script: InjectionScripts.initAndOpenScript)
         
@@ -165,15 +159,15 @@ extension CustomWebView: WKNavigationDelegate {
         }
     }
     
-    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+    final func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         showActivityIndicator(show: true)
     }
     
-    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+    final func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         showActivityIndicator(show: false)
     }
     
-    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+    final func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         showActivityIndicator(show: false)
         let htmlFileName = "error_page.html"
         let frameworkBundle = Bundle(for: type(of: self))
@@ -187,7 +181,7 @@ extension CustomWebView: WKNavigationDelegate {
 
 extension CustomWebView: WKUIDelegate {
     
-    func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
+    final func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
         let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default))
         self.present(alertController, animated: true)
@@ -199,20 +193,20 @@ extension CustomWebView: WKUIDelegate {
 ///  Methods that will be called by JavaScript.
 extension CustomWebView {
     
-    private func close() {
+    private final func close() {
         self.dismiss(animated: true)
     }
     
-    private func reloadPage() {
+    private final func reloadPage() {
         self.loadUrlInWebView()
     }
     
-    private func getUserInfo() -> String {
+    private final func getUserInfo() -> String {
         guard let userInfo = appUserdefaults?.getUserInfoJson() else { return "" }
         return userInfo
     }
     
-    private func getJwtToken() -> String {
+    private final func getJwtToken() -> String {
         guard let jwtToken = appUserdefaults?.getJwtToken() else { return "" }
         return jwtToken
     }
@@ -222,8 +216,8 @@ extension CustomWebView: WKScriptMessageHandlerWithReply {
     
     ///  Triggered by postMessage(window.webkit.messageHandlers.iosListener.postMessage(...))
     @available(iOS 14.0, *)
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) async -> (Any?, String?) {
-        print("WKWebView has received a message: `\(message.body)`")
+    final func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) async -> (Any?, String?) {
+        dprint("WKWebView has received a message: `\(message.body)`")
         
         guard let messageBody = message.body as? String else { return (nil, nil) }
 
@@ -249,7 +243,7 @@ extension CustomWebView: WKScriptMessageHandlerWithReply {
     }
     
     ///  Notify subscribers that appEvent or customEvent has been triggered.
-    func handleEvent(_ eventString: String) {
+    final func handleEvent(_ eventString: String) {
         let event: DeskproEvent
         let data = eventString.replacingOccurrences(of: DeskproEvent.eventPrefix, with: "")
         
@@ -284,6 +278,14 @@ extension UIViewController {
         
         present(customWebView, animated: true)
         return customWebView
+    }
+    
+    ///  Script for making the webView non-zoomable. Users are allowed to zoom anywhere in the webView and webView autozooms when keyboard appears.
+    var source: String {
+        "var meta = document.createElement('meta');" +
+        "meta.name = 'viewport';" +
+        "meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';" +
+        "var head = document.getElementsByTagName('head')[0];" + "head.appendChild(meta);";
     }
 }
 

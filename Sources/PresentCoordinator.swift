@@ -8,15 +8,17 @@
 import UIKit
 
 ///  The coordinator for easier WebView presentation handling. It will make sure that only one instance of WebView is presented at the time.
-public class PresentCoordinator: WebViewDelegate {
+/// - Tag: PresentCoordinator
+public final class PresentCoordinator: WebViewDelegate {
     
-    ///  The ViewController from which the WebView will be presented.
     weak var containingViewController: UIViewController?
     
     var path: String = ""
     var webViewInstance: CustomWebView?
     var eventRouter: EventRouter
     
+    ///- Parameter containingViewController: The ViewController from which the WebView will be presented.
+    ///- Parameter eventRouter: The unique event router for this messenger instance. Enables event handling
     public init(
         containingViewController: UIViewController,
         eventRouter: EventRouter
@@ -40,11 +42,13 @@ public class PresentCoordinator: WebViewDelegate {
         }
     }
     
-    func webViewDismissed() {
+    /// Delegate method: invoked when the web view is dismissed in order to make the instance nil for presentation purposes
+    final func webViewDismissed() {
         webViewInstance = nil
     }
     
-    func eventOccured(_ event: DeskproEvent) {
+    /// Delegate method: invoked when an event occurs
+    final func eventOccured(_ event: DeskproEvent) {
         eventRouter.handleOrLogEvent(event: event)
     }
 }
