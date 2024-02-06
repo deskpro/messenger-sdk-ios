@@ -7,33 +7,44 @@
 
 import Foundation
 
+/// Notifies the outside subscriber if an event occured. Prints all of the events if the autologging is enabled
 public final class EventRouter {
     
+    /// Invoked when an event occurs
     public var handleEventCallback: ((DeskproEvent) -> Void)? = nil
-    
     private var enableAutologging: Bool
     
+    ///  Initializes the EventRouter class
+    ///
+    ///- Parameter enableAutologging: If true, the EventRouter class will print all of the events that occur (during debug mode).
+    ///
     init(enableAutologging: Bool = false) {
         self.enableAutologging = enableAutologging
     }
     
+    /// Called when an event occurs (from [PresentCoordinator](x-source-tag://PresentCoordinator)). Logs the event if needed and invokes the callback for outside handling
     final func handleOrLogEvent(event: DeskproEvent) {
         if enableAutologging {
             dprint("[DeskproLogger]: \(event.debugDescription)")
         }
+        
         handleEventCallback?(event)
     }
 }
 
+/// An event that occurs during a chat session. The observation of these events occurs through the EventRouter class
 public enum DeskproEvent {
+    /// The event prefix which is appended in front of each event for easier identification
     static let eventPrefix = "appEvent_"
     
+    /// The data inside each event is stored as raw JSON in string format, which can be further transformed if needed
     case newChat(data: String)
     case chatEnded(data: String)
     case newChatMessage(data: String)
     case chatUploadRequest(data: String)
     case custom(data: String)
     
+    /// The identifier for each event
     var identifier: String {
         switch self {
         case .newChat: return "chat.new"
@@ -44,6 +55,7 @@ public enum DeskproEvent {
         }
     }
     
+    /// If the raw JSON contains this string, the according event is instantiated
     var containedIdentifier: String {
         switch self {
         case .newChat: return "\"id\":\"chat.new\""
@@ -54,6 +66,7 @@ public enum DeskproEvent {
         }
     }
     
+    /// Raw event JSON in string format
     public var data: String {
         switch self {
         case let .newChat(data): return data
@@ -64,11 +77,13 @@ public enum DeskproEvent {
         }
     }
     
+    /// Returns the date of the event and the raw json for printing purposes
     public var debugDescription: String {
         "\(Date.nowString) [AppEvent] \(data)"
     }
 }
 
+/// Returns the current date as String for printing purposes
 private extension Date {
     static var nowString: String {
         let dateFormatter = DateFormatter()
@@ -77,6 +92,7 @@ private extension Date {
     }
 }
 
+/// Prints items only if debug mode is active
 func dprint(_ object: Any...) {
 #if DEBUG
     for item in object {
@@ -84,6 +100,7 @@ func dprint(_ object: Any...) {
     }
 #endif
 }
+
 func dprint(_ object: Any) {
 #if DEBUG
     print(object)

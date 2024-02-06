@@ -12,7 +12,7 @@ import UIKit
 ///  The `DeskPro` class provides methods for initializing the Messenger, managing user information,
 ///  handling push notifications, and presenting the DeskPro messaging interface.
 ///
-public class DeskPro: Messenger {
+public final class DeskPro: Messenger {
     
     private var messengerConfig: MessengerConfig
     
@@ -43,7 +43,7 @@ public class DeskPro: Messenger {
     ///   The method is intended to simulate a test scenario and provide a String result based on the outcome of the test.
     ///
     /// - Returns: A String representing the result of the test operation.
-    public func test() -> String {
+    public final func test() -> String {
         return "Hello world from Messenger!"
     }
     
@@ -54,7 +54,7 @@ public class DeskPro: Messenger {
     ///
     /// - Parameter user: The [User](x-source-tag://User) object containing the user information.
     ///
-    public func setUserInfo(user: User) {
+    public final func setUserInfo(user: User) {
         appUserDefaults?.setUserInfo(user)
     }
     
@@ -64,7 +64,7 @@ public class DeskPro: Messenger {
     ///
     /// - Returns: `true` if the token is successfully saved, `false` otherwise.
     @discardableResult
-    public func authorizeUser(userJwt: String) -> Bool {
+    public final func authorizeUser(userJwt: String) -> Bool {
         appUserDefaults?.setJwtToken(userJwt)
         return true
     }
@@ -75,7 +75,7 @@ public class DeskPro: Messenger {
     ///
     /// - Returns: `true` if the logout operation is successful; `false` otherwise.
     @discardableResult
-    public func forgetUser() -> Bool {
+    public final func forgetUser() -> Bool {
         appUserDefaults?.clear()
         return true
     }
@@ -87,7 +87,7 @@ public class DeskPro: Messenger {
     /// - Parameter token: The push registration token obtained from the device.
     ///
     /// - Returns: `true` if the push registration token is successfully set; `false` otherwise.
-    public func setPushRegistrationToken(token: String) -> Bool {
+    public final func setPushRegistrationToken(token: String) -> Bool {
         // TODO: Not yet implemented
         return true
     }
@@ -101,7 +101,7 @@ public class DeskPro: Messenger {
     /// - Returns: `true` if the push notification is related to DeskPro; `false` otherwise.
     ///
     /// - Tag: isDeskProPushNotification
-    public func isDeskProPushNotification(pushNotification: PushNotificationData) -> Bool {
+    public final func isDeskProPushNotification(pushNotification: PushNotificationData) -> Bool {
         // TODO: Not yet implemented
         return true
     }
@@ -114,7 +114,7 @@ public class DeskPro: Messenger {
     ///
     /// - Parameter pushNotification: The push notification data to be handled.
     ///
-    public func handlePushNotification(pushNotification: PushNotificationData) {
+    public final func handlePushNotification(pushNotification: PushNotificationData) {
         // TODO: Not yet implemented
     }
     
@@ -124,7 +124,7 @@ public class DeskPro: Messenger {
     ///
     /// - Returns: A [PresentBuilder](x-source-tag://PresentBuilder) instance to start building presentation paths.
     ///
-    public func present() -> PresentBuilder {
+    public final func present() -> PresentBuilder {
         let url = messengerConfig.appUrl//.appending(messengerConfig.appId)
         //return PresentBuilder(url: url, containingViewController: containingViewController)
         return PresentBuilder(url: url, appId: messengerConfig.appId, coordinator: coordinator)
@@ -134,7 +134,7 @@ public class DeskPro: Messenger {
     ///
     ///   This method closes the currently displayed chat view, terminating the user's interaction with the DeskPro content.
     ///
-    public func close() {
+    public final func close() {
         // TODO: Not yet implemented
     }
     
@@ -144,7 +144,7 @@ public class DeskPro: Messenger {
     ///
     /// - Returns: The number of unread conversations in the inbox.
     ///
-    public func getUnreadConversationCount() -> Int {
+    public final func getUnreadConversationCount() -> Int {
         // TODO: Not yet implemented
         return 0
     }
@@ -153,7 +153,7 @@ public class DeskPro: Messenger {
     ///
     ///   This method turns on logging for the DeskPro SDK, allowing detailed information to be logged for debugging and troubleshooting purposes.
     ///
-    public func enableLogging() {
+    public final func enableLogging() {
         // TODO: Not yet implemented
     }
 }
