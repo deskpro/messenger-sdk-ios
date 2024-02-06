@@ -15,14 +15,10 @@ let package = Package(
     targets: [
         .target(
             name: "messenger-sdk-ios",
-            dependencies: [.targetItem(name: "DeskproFramework", condition: .none)],
             path: "Sources"
         ),
         .testTarget(
             name: "messenger-sdk-iosTests",
-            dependencies: ["messenger-sdk-ios"]),
-        .binaryTarget(
-            name: "DeskproFramework",
-            path: "Sources/DeskproFramework.xcframework"),
+            dependencies: ["messenger-sdk-ios"])
     ]
 )
