@@ -1,6 +1,5 @@
 //
 //  EventRouter.swift
-//  DeskproFramework
 //
 //  Created by QSD BiH on 2. 2. 2024..
 //

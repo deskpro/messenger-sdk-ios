@@ -1,6 +1,5 @@
 //
 //  MessengerConfig.swift
-//  DeskproFramework
 //
 //  Created by QSD BiH on 4. 1. 2024..
 //

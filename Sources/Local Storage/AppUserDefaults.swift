@@ -1,28 +1,30 @@
 //
 //  AppUserDefaults.swift
-//  DeskproFramework
 //
 //  Created by QSD BiH on 25. 1. 2024..
 //
 
 import Foundation
 
-///UserDefaults utility class for managing user information and JWT tokens in the DeskPro Messenger module.
+///   UserDefaults utility class for managing user information and JWT tokens in the DeskPro Messenger module.
 ///
-///The class provides methods for retrieving, storing, and clearing user information and JWT tokens using the UserDefaults API.
+///   The class provides methods for retrieving, storing, and clearing user information, device tokens and JWT tokens using the UserDefaults API.
 class AppUserDefaults {
 
-    ///UserDefaults instance.
+    ///   UserDefaults instance.
     let prefs = UserDefaults.standard
     
-    ///The application ID associated with the DeskPro Messenger module.
+    ///   The application ID associated with the DeskPro Messenger module.
     private let appId: String
     
-    ///Key for storing user information in UserDefaults.
+    ///   Key for storing user information in UserDefaults.
     private var userInfoKey: String { "\(appId)_user_info" }
     
-    ///Key for storing JWT token in UserDefaults.
+    ///   Key for storing JWT token in UserDefaults.
     private var jwtTokenKey: String { "\(appId)_jwt_token" }
+    
+    ///   Key for storing device token for push notifications in UserDefaults.
+    private var deviceTokenKey: String { "\(appId)_device_token" }
 
     init(appId: String) {
         self.appId = appId
@@ -57,13 +59,19 @@ class AppUserDefaults {
     func getJwtToken() -> String? {
         return prefs.string(forKey: jwtTokenKey)
     }
+    
+    ///   Retrieves the deivce token from UserDefaults.
+    ///
+    /// - Returns: The device token, or nil if not present.
+    func getDeviceToken() -> String? {
+        return prefs.string(forKey: deviceTokenKey)
+    }
 
     ///   Sets the user information in UserDefaults.
     ///
     ///   If the user is nil, removes the user information from UserDefaults.
     ///
     /// - Parameter user: The [User](x-source-tag://User) object representing user information, or nil.
-    ///
     func setUserInfo(_ user: User?) {
         guard let data = try? JSONEncoder().encode(user) else { prefs.removeObject(forKey: userInfoKey); return }
         prefs.set(data, forKey: userInfoKey)
@@ -73,16 +81,26 @@ class AppUserDefaults {
     ///
     ///   If the token is nil, removes the token from UserDefaults.
     ///
-    /// - Parameter user: The [User](x-source-tag://User) object representing user information, or nil.
-    ///
+    /// - Parameter token: The JWT token, or nil.
     func setJwtToken(_ token: String?) {
         guard let token else { prefs.removeObject(forKey: jwtTokenKey); return }
         prefs.set(token, forKey: jwtTokenKey)
+    }
+    
+    ///   Sets the device token in UserDefaults.
+    ///
+    ///   If the token is nil, removes the token from UserDefaults.
+    ///
+    /// - Parameter token: The JWT token, or nil.
+    func setDeviceToken(_ token: String?) {
+        guard let token else { prefs.removeObject(forKey: deviceTokenKey); return }
+        prefs.set(token, forKey: deviceTokenKey)
     }
 
     ///   Clears all data from UserDefaults.
     func clear() {
         UserDefaults.standard.removeObject(forKey: userInfoKey)
         UserDefaults.standard.removeObject(forKey: jwtTokenKey)
+        UserDefaults.standard.removeObject(forKey: deviceTokenKey)
     }
 }
