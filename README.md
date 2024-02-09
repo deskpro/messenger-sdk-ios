@@ -24,7 +24,7 @@ Once you're in the root directory of the package, you can run the tests using th
 
 - File > Swift Packages > Add Package Dependency
 - Add `https://github.com/deskpro/messenger-sdk-ios`
-- Select "Up to Next Major" with "0.0.5"
+- Select "Up to Next Major" version
 
 ## Setup and Initialization
 First, import the SDK:
