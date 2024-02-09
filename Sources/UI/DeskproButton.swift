@@ -1,6 +1,5 @@
 //
 //  DeskproButton.swift
-//  DeskproFramework
 //
 //  Created by QSD BiH on 15. 1. 2024..
 //

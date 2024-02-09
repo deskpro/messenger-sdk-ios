@@ -1,6 +1,5 @@
 //
 //  WebView.swift
-//  DeskproFramework
 //
 //  Created by QSD BiH on 4. 1. 2024..
 //
@@ -210,6 +209,11 @@ extension CustomWebView {
         guard let jwtToken = appUserdefaults?.getJwtToken() else { return "" }
         return jwtToken
     }
+    
+    private final func getDeviceToken() -> String {
+        guard let deviceToken = appUserdefaults?.getDeviceToken() else { return "" }
+        return deviceToken
+    }
 }
 
 extension CustomWebView: WKScriptMessageHandlerWithReply {
@@ -237,6 +241,8 @@ extension CustomWebView: WKScriptMessageHandlerWithReply {
             return(getUserInfo(), nil)
         case .getUserJwtToken:
             return(getJwtToken(), nil)
+        case .getDeviceToken:
+            return(getDeviceToken(), nil)
         }
         
         return (nil, nil)
@@ -295,6 +301,7 @@ private enum PostMessageFunctions: String {
     case reloadPage = "reloadPage"
     case getUserInfo = "getUserInfo"
     case getUserJwtToken = "getUserJwtToken"
+    case getDeviceToken = "getDeviceToken"
 }
 
 private enum InjectionScripts {
@@ -325,6 +332,12 @@ private enum InjectionScripts {
           if (data) {
             const { side, offsetBottom, offsetSide, width, height } = data;
           }
+    
+          const deviceToken = await window.webkit.messageHandlers.iosListener.postMessage("\(PostMessageFunctions.getDeviceToken)");
+          
+          window.DESKPRO_MESSENGER_CONNECTION.childMethods?.setDeviceToken(messengerId, {
+              token: deviceToken
+          });
         },
         getViewHeight: async (messengerId) => {
           return "fullscreen";

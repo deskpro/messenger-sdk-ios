@@ -1,6 +1,5 @@
 //
 //  User.swift
-//  DeskproFramework
 //
 //  Created by QSD BiH on 25. 1. 2024..
 //

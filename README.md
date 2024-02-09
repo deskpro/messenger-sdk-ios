@@ -27,9 +27,9 @@ Once you're in the root directory of the package, you can run the tests using th
 - Select "Up to Next Major" with "0.0.5"
 
 ## Setup and Initialization
-First, import the Deskpro SDK:
+First, import the SDK:
 ```
-import DeskproFramework
+import messenger_sdk_ios
 ```
 
 Then, in your ViewController:

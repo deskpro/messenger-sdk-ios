@@ -1,6 +1,5 @@
 //
 //  PushNotificationData.swift
-//  DeskproFramework
 //
 //  Created by QSD BiH on 26. 1. 2024..
 //

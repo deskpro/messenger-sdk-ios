@@ -1,6 +1,5 @@
 //
 //  Deskpro.swift
-//  DeskproFramework
 //
 //  Created by QSD BiH on 4. 1. 2024..
 //
@@ -87,8 +86,9 @@ public final class DeskPro: Messenger {
     /// - Parameter token: The push registration token obtained from the device.
     ///
     /// - Returns: `true` if the push registration token is successfully set; `false` otherwise.
+    @discardableResult
     public final func setPushRegistrationToken(token: String) -> Bool {
-        // TODO: Not yet implemented
+        appUserDefaults?.setDeviceToken(token)
         return true
     }
     
