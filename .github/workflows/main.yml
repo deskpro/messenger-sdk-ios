@@ -1,0 +1,29 @@
+name: Messenger SDK iOS CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  build_and_test:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Print Xcode Version
+        run: xcodebuild -version
+
+      - name: Build
+        run: xcodebuild -scheme messenger-sdk-ios -destination 'generic/platform=iOS Simulator,name=iPhone' build
+
+      - name: Run tests
+        run: xcodebuild -scheme messenger-sdk-ios -destination 'platform=iOS Simulator,name=iPhone 13' test
