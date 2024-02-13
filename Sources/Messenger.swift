@@ -52,12 +52,12 @@ protocol Messenger {
     ///
     ///   This method examines the provided push notification data to determine whether it is intended for the DeskPro SDK.
     ///
-    /// - Parameter pushNotification: The push notification data to be analyzed.
+    /// - Parameter data: The push notification data to be analyzed.
     ///
     /// - Returns: `true` if the push notification is related to DeskPro; `false` otherwise.
     ///
     /// - Tag: isDeskProPushNotification
-    func isDeskProPushNotification(pushNotification: PushNotificationData) -> Bool
+    func isDeskProPushNotification(data: [AnyHashable: Any]) -> Bool
 
     ///   Handles the incoming push notification data if it is related to DeskPro.
     ///

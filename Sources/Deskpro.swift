@@ -96,14 +96,17 @@ public final class DeskPro: Messenger {
     ///
     ///   This method examines the provided push notification data to determine whether it is intended for the DeskPro SDK.
     ///
-    /// - Parameter pushNotification: The push notification data to be analyzed.
+    /// - Parameter data: The push notification data to be analyzed.
     ///
     /// - Returns: `true` if the push notification is related to DeskPro; `false` otherwise.
     ///
     /// - Tag: isDeskProPushNotification
-    public final func isDeskProPushNotification(pushNotification: PushNotificationData) -> Bool {
-        // TODO: Not yet implemented
-        return true
+    public final func isDeskProPushNotification(data: [AnyHashable: Any]) -> Bool {
+        if let issuer = data["issuer"] as? String {
+            return issuer == "deskpro-messenger"
+        } else {
+            return false
+        }
     }
     
     ///   Handles the incoming push notification data if it is related to DeskPro.
