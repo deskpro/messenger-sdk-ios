@@ -42,7 +42,7 @@ public final class DeskPro: Messenger {
     ///   The method is intended to simulate a test scenario and provide a String result based on the outcome of the test.
     ///
     /// - Returns: A String representing the result of the test operation.
-    public final func test() -> String {
+    public static func test() -> String {
         return "Hello world from Messenger!"
     }
     
@@ -101,7 +101,7 @@ public final class DeskPro: Messenger {
     /// - Returns: `true` if the push notification is related to DeskPro; `false` otherwise.
     ///
     /// - Tag: isDeskProPushNotification
-    public final func isDeskProPushNotification(data: [AnyHashable: Any]) -> Bool {
+    public static func isDeskProPushNotification(data: [AnyHashable: Any]) -> Bool {
         if let issuer = data["issuer"] as? String {
             return issuer == "deskpro-messenger"
         } else {
