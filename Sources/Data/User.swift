@@ -7,7 +7,7 @@
 import Foundation
 
 /// - Tag: User
-public class User: Codable {
+public class User: Codable, Equatable {
     
     public var name: String? = nil
     public var firstName: String? = nil
@@ -19,5 +19,9 @@ public class User: Codable {
         self.firstName = firstName
         self.lastName = lastName
         self.email = email
+    }
+    
+    public static func == (lhs: User, rhs: User) -> Bool {
+        return lhs.name == rhs.name && lhs.firstName == rhs.firstName && lhs.lastName == rhs.lastName && lhs.email == rhs.email
     }
 }
