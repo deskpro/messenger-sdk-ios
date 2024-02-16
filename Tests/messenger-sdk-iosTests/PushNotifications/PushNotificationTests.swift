@@ -15,7 +15,7 @@ final class PushNotificationTests: XCTestCase {
         let userInfo = ["issuer" : "deskpro-messenger"]
         content.userInfo = userInfo as [AnyHashable : Any]
         
-        XCTAssertTrue(DeskPro.isDeskProPushNotification(data: content.userInfo), "❌The notification data is not correct.❌")
+        XCTAssertTrue(DeskPro.isDeskProPushNotification(data: content.userInfo), ErrorMessages.invalidNotificationData)
     }
     
     func testInvalidPushNotification() {
@@ -23,6 +23,6 @@ final class PushNotificationTests: XCTestCase {
         let userInfo = ["issuer" : "some-messenger"]
         content.userInfo = userInfo as [AnyHashable : Any]
         
-        XCTAssertFalse(DeskPro.isDeskProPushNotification(data: content.userInfo), "❌The notification data is correct.❌")
+        XCTAssertFalse(DeskPro.isDeskProPushNotification(data: content.userInfo), ErrorMessages.validNotificationData)
     }
 }

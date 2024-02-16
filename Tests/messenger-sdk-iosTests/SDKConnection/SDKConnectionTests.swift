@@ -11,6 +11,6 @@ import XCTest
 final class SDKConnectionTests: XCTestCase {
     
     func testConnectionWithSDK() {
-        XCTAssertEqual(DeskPro.test(), "Hello world from Messenger!", "❌The strings do not match.❌")
+        XCTAssertEqual(DeskPro.test(), "Hello world from Messenger!", ErrorMessages.stringsNotMatching)
     }
 }
