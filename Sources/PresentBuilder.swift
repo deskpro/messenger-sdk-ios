@@ -26,6 +26,10 @@ public final class PresentBuilder {
     
     ///  Represents the constructed path for the URL.
     private var path = ""
+    
+    func getPath() -> String {
+        return path
+    }
 
     ///   This method is a constructor for creating Deskpro objects
     ///

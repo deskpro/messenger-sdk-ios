@@ -14,7 +14,7 @@ protocol Messenger {
     ///   The method is intended to simulate a test scenario and provide a String result based on the outcome of the test.
     ///
     /// - Returns: A String representing the result of the test operation.
-    func test() -> String
+    static func test() -> String
 
     ///   Sets user information for the application.
     ///
@@ -57,7 +57,7 @@ protocol Messenger {
     /// - Returns: `true` if the push notification is related to DeskPro; `false` otherwise.
     ///
     /// - Tag: isDeskProPushNotification
-    func isDeskProPushNotification(data: [AnyHashable: Any]) -> Bool
+    static func isDeskProPushNotification(data: [AnyHashable: Any]) -> Bool
 
     ///   Handles the incoming push notification data if it is related to DeskPro.
     ///

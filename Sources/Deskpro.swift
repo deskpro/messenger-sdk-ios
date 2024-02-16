@@ -19,7 +19,7 @@ public final class DeskPro: Messenger {
     private var coordinator: PresentCoordinator
     
     ///  User defaults manager for storing user-related information.
-    private var appUserDefaults: AppUserDefaults?
+    var appUserDefaults: AppUserDefaults
     
     ///  Each Deskpro instance is having its own eventRouter to handle events in chat.
     public var eventRouter: EventRouter
@@ -42,7 +42,7 @@ public final class DeskPro: Messenger {
     ///   The method is intended to simulate a test scenario and provide a String result based on the outcome of the test.
     ///
     /// - Returns: A String representing the result of the test operation.
-    public final func test() -> String {
+    public static func test() -> String {
         return "Hello world from Messenger!"
     }
     
@@ -54,7 +54,17 @@ public final class DeskPro: Messenger {
     /// - Parameter user: The [User](x-source-tag://User) object containing the user information.
     ///
     public final func setUserInfo(user: User) {
-        appUserDefaults?.setUserInfo(user)
+        appUserDefaults.setUserInfo(user)
+    }
+    
+    ///   Getter method for user info, should only be used for testing.
+    final func getUserInfo() -> User? {
+        return appUserDefaults.getUserInfo()
+    }
+    
+    ///   Getter method for user info in JSON format, should only be used for testing.
+    final func getUserInfoJson() -> String? {
+        return appUserDefaults.getUserInfoJson()
     }
     
     ///   Sets a user JWT token that enables Messenger to treat this user as a logged-in user.
@@ -64,8 +74,13 @@ public final class DeskPro: Messenger {
     /// - Returns: `true` if the token is successfully saved, `false` otherwise.
     @discardableResult
     public final func authorizeUser(userJwt: String) -> Bool {
-        appUserDefaults?.setJwtToken(userJwt)
+        appUserDefaults.setJwtToken(userJwt)
         return true
+    }
+    
+    ///   Getter method for JWT token, should only be used for testing.
+    func getJwtToken() -> String? {
+        return appUserDefaults.getJwtToken()
     }
     
     ///   Logs out the current user from the SDK session.
@@ -75,7 +90,7 @@ public final class DeskPro: Messenger {
     /// - Returns: `true` if the logout operation is successful; `false` otherwise.
     @discardableResult
     public final func forgetUser() -> Bool {
-        appUserDefaults?.clear()
+        appUserDefaults.clear()
         return true
     }
     
@@ -88,8 +103,13 @@ public final class DeskPro: Messenger {
     /// - Returns: `true` if the push registration token is successfully set; `false` otherwise.
     @discardableResult
     public final func setPushRegistrationToken(token: String) -> Bool {
-        appUserDefaults?.setDeviceToken(token)
+        appUserDefaults.setDeviceToken(token)
         return true
+    }
+    
+    ///   Getter method for device token, should only be used for testing.
+    func getPushRegistrationToken() -> String? {
+        return appUserDefaults.getDeviceToken()
     }
     
     ///   Checks whether a push notification is related to the DeskPro SDK.
@@ -101,7 +121,7 @@ public final class DeskPro: Messenger {
     /// - Returns: `true` if the push notification is related to DeskPro; `false` otherwise.
     ///
     /// - Tag: isDeskProPushNotification
-    public final func isDeskProPushNotification(data: [AnyHashable: Any]) -> Bool {
+    public static func isDeskProPushNotification(data: [AnyHashable: Any]) -> Bool {
         if let issuer = data["issuer"] as? String {
             return issuer == "deskpro-messenger"
         } else {
