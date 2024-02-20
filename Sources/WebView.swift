@@ -310,7 +310,7 @@ private enum InjectionScripts {
     window.DESKPRO_MESSENGER_OPTIONS = {
         showLauncherButton: false,
         openOnInit: true,
-        userInfo: { name: "john" },
+        userInfo: window.webkit.messageHandlers.iosListener.postMessage("\(PostMessageFunctions.getUserInfo)"),
         signedUserInfo: undefined,
         launcherButtonConfig: undefined,
         messengerAppConfig: undefined,
@@ -322,7 +322,7 @@ private enum InjectionScripts {
         ready: async (messengerId) => {
           const data = await window.DESKPRO_MESSENGER_CONNECTION.childMethods?.init(messengerId, {
             showLauncherButton: DESKPRO_MESSENGER_OPTIONS.showLauncherButton,
-            user: window.DESKPRO_MESSENGER_OPTIONS?.userInfo,
+            userInfo: window.DESKPRO_MESSENGER_OPTIONS?.userInfo,
             launcherButtonConfig: DESKPRO_MESSENGER_OPTIONS.launcherButtonConfig,
             messengerAppConfig: DESKPRO_MESSENGER_OPTIONS.messengerAppConfig,
             parentViewHeight: "fullscreen",
@@ -342,13 +342,7 @@ private enum InjectionScripts {
         getViewHeight: async (messengerId) => {
           return "fullscreen";
         },
-        getUserInfo: async (messengerId) => {
-            window.webkit.messageHandlers.iosListener.postMessage("\(PostMessageFunctions.getUserInfo)")
-            .then(response => {
-                //alert(response);
-            })
-        },
-        getUserJwtToken: async (messengerId) => {
+        getSignedUserInfo: async (messengerId) => {
             window.webkit.messageHandlers.iosListener.postMessage("\(PostMessageFunctions.getUserJwtToken)")
             .then(response => {
                 //alert(response);
