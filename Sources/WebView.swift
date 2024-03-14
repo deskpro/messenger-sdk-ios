@@ -325,7 +325,7 @@ private enum InjectionScripts {
             userInfo: window.DESKPRO_MESSENGER_OPTIONS?.userInfo,
             launcherButtonConfig: DESKPRO_MESSENGER_OPTIONS.launcherButtonConfig,
             messengerAppConfig: DESKPRO_MESSENGER_OPTIONS.messengerAppConfig,
-            parentViewHeight: "fullscreen",
+            parentViewDimensions: "fullscreen",
             open: DESKPRO_MESSENGER_OPTIONS.openOnInit,
           });
 
@@ -339,7 +339,7 @@ private enum InjectionScripts {
               token: deviceToken
           });
         },
-        getViewHeight: async (messengerId) => {
+        getViewDimensions: async (messengerId) => {
           return "fullscreen";
         },
         getSignedUserInfo: async (messengerId) => {
@@ -352,7 +352,7 @@ private enum InjectionScripts {
             const { width, height } = data;
         },
         close: async (messengerId, data) => {
-            window.webkit.messageHandlers.iosListener.postMessage("\(PostMessageFunctions.closeWebView)")
+            const result = await window.webkit.messageHandlers.iosListener.postMessage("\(PostMessageFunctions.closeWebView)")
         },
         appEvent: async (messengerId, event) => {
             //alert(event.id)
@@ -362,5 +362,9 @@ private enum InjectionScripts {
       },
       childMethods: undefined,
     };
+    """
+    
+    static let logoutScript = """
+        window.DESKPRO_MESSENGER_CONNECTION.childMethods.logout("1");
     """
 }
