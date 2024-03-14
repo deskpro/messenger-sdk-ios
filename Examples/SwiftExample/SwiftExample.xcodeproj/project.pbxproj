@@ -14,7 +14,7 @@
 		5E19F59D2B477AE400E37F55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E19F59C2B477AE400E37F55 /* Assets.xcassets */; };
 		5E19F5A02B477AE400E37F55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E19F59E2B477AE400E37F55 /* LaunchScreen.storyboard */; };
 		5E66BF0C2B7FB63100FAF349 /* messenger-sdk-ios in Frameworks */ = {isa = PBXBuildFile; productRef = 5E66BF0B2B7FB63100FAF349 /* messenger-sdk-ios */; };
-		5EE6D3A52BA3196B008A6DD3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5EE6D3A42BA3196B008A6DD3 /* GoogleService-Info.plist */; };
+		5E99636E2BA3339600F27D11 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E99636D2BA3339600F27D11 /* GoogleService-Info.plist */; };
 		5EF899182B728D75005547BC /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5EF899172B728D75005547BC /* FirebaseAnalytics */; };
 		5EF899422B728D75005547BC /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 5EF899412B728D75005547BC /* FirebaseMessaging */; };
 /* End PBXBuildFile section */
@@ -41,7 +41,7 @@
 		5E19F59C2B477AE400E37F55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E19F59F2B477AE400E37F55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E19F5A12B477AE400E37F55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5EE6D3A42BA3196B008A6DD3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5E99636D2BA3339600F27D11 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5EF898E22B726952005547BC /* SwiftExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftExample.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,7 +86,7 @@
 				5E19F59C2B477AE400E37F55 /* Assets.xcassets */,
 				5E19F59E2B477AE400E37F55 /* LaunchScreen.storyboard */,
 				5E19F5A12B477AE400E37F55 /* Info.plist */,
-				5EE6D3A42BA3196B008A6DD3 /* GoogleService-Info.plist */,
+				5E99636D2BA3339600F27D11 /* GoogleService-Info.plist */,
 			);
 			path = SwiftExample;
 			sourceTree = "<group>";
@@ -160,7 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E19F5A02B477AE400E37F55 /* LaunchScreen.storyboard in Resources */,
-				5EE6D3A52BA3196B008A6DD3 /* GoogleService-Info.plist in Resources */,
+				5E99636E2BA3339600F27D11 /* GoogleService-Info.plist in Resources */,
 				5E19F59D2B477AE400E37F55 /* Assets.xcassets in Resources */,
 				5E19F59B2B477AE400E37F55 /* Main.storyboard in Resources */,
 			);

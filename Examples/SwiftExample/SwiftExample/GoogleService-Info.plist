@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyDtwkW1woy__Z8B6LtO9PW4NEdlrcY5Y18</string>
+	<string>AIzaSyDetyUf9Nn5mT8VTwxG0woav_1UgVDwW3Y</string>
 	<key>GCM_SENDER_ID</key>
-	<string>115778207718</string>
+	<string>450727442932</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>ios.deskpro.messenger.sample</string>
+	<string>HC9N5Z797X.com.deskpro.mobile.ios</string>
 	<key>PROJECT_ID</key>
-	<string>deskpro-sample</string>
+	<string>deskpro-messenger</string>
 	<key>STORAGE_BUCKET</key>
-	<string>deskpro-sample.appspot.com</string>
+	<string>deskpro-messenger.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:115778207718:ios:ae5e8705a6ea55f04a2027</string>
+	<string>1:450727442932:ios:d0dc056a89cc700d81e1a1</string>
 </dict>
 </plist>
