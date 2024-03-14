@@ -136,10 +136,10 @@
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DCu-Pr-mEk">
-                                <rect key="frame" x="15" y="592.33333333333337" width="363" height="220.66666666666663"/>
+                                <rect key="frame" x="15" y="595.33333333333337" width="363" height="217.66666666666663"/>
                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Events and Notifications Log" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Xu-gP-agk">
@@ -168,6 +168,30 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJf-Rb-HGF">
+                                <rect key="frame" x="326" y="414.33333333333331" width="52" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Zrm-yO-lm8"/>
+                                    <constraint firstAttribute="width" constant="52" id="gqM-gN-6LI"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="doc.on.doc" catalog="system"/>
+                                <connections>
+                                    <action selector="copyTokenBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LlZ-N0-au5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Vu-zG-htt">
+                                <rect key="frame" x="326" y="557.33333333333337" width="52" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="8OF-pm-iPI"/>
+                                    <constraint firstAttribute="width" constant="52" id="PMU-3A-L6U"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="doc.on.doc" catalog="system"/>
+                                <connections>
+                                    <action selector="copyLogsBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dpL-A8-fyT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -196,24 +220,30 @@
                             <constraint firstItem="XGa-Tn-y93" firstAttribute="top" secondItem="WmF-qw-6PQ" secondAttribute="bottom" constant="3" id="b7i-1S-YiI"/>
                             <constraint firstItem="1Xu-gP-agk" firstAttribute="top" secondItem="MQP-sm-e29" secondAttribute="bottom" constant="20" id="cDp-VU-4DR"/>
                             <constraint firstItem="dUe-jo-Zuh" firstAttribute="top" secondItem="zsl-fy-PLR" secondAttribute="bottom" constant="20" id="d2I-UT-tyd"/>
+                            <constraint firstItem="WJf-Rb-HGF" firstAttribute="top" secondItem="O69-Jx-fZe" secondAttribute="bottom" constant="40" id="dfB-yd-sFl"/>
                             <constraint firstItem="xTS-sb-FhW" firstAttribute="top" secondItem="zsl-fy-PLR" secondAttribute="bottom" constant="20" id="drG-cK-slx"/>
                             <constraint firstItem="zsl-fy-PLR" firstAttribute="top" secondItem="3rx-fc-21M" secondAttribute="bottom" constant="20" id="gf3-in-VbP"/>
                             <constraint firstItem="xTS-sb-FhW" firstAttribute="leading" secondItem="dUe-jo-Zuh" secondAttribute="trailing" constant="20" id="hEH-Bf-8Bh"/>
                             <constraint firstItem="dUe-jo-Zuh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="hXh-4o-GbB"/>
                             <constraint firstItem="JKA-kQ-HBK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="k9j-kx-zQg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5Vu-zG-htt" secondAttribute="trailing" constant="15" id="kl2-zd-zuQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MQP-sm-e29" secondAttribute="trailing" constant="15" id="mLH-3F-NLD"/>
                             <constraint firstItem="h2h-tN-Ipp" firstAttribute="top" secondItem="aad-9Y-aA6" secondAttribute="bottom" constant="3" id="pNE-BK-Gec"/>
+                            <constraint firstItem="DCu-Pr-mEk" firstAttribute="top" secondItem="5Vu-zG-htt" secondAttribute="bottom" constant="3" id="q11-oH-WLF"/>
                             <constraint firstItem="WmF-qw-6PQ" firstAttribute="top" secondItem="JKA-kQ-HBK" secondAttribute="bottom" constant="15" id="qAi-ov-SUW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zsl-fy-PLR" secondAttribute="trailing" constant="15" id="rm6-9z-gsH"/>
                             <constraint firstItem="aad-9Y-aA6" firstAttribute="top" secondItem="XGa-Tn-y93" secondAttribute="bottom" constant="15" id="rpO-Kj-fwl"/>
                             <constraint firstItem="W8e-5m-x1A" firstAttribute="bottom" secondItem="XGa-Tn-y93" secondAttribute="bottom" id="sFH-4A-fYr"/>
-                            <constraint firstItem="DCu-Pr-mEk" firstAttribute="top" secondItem="1Xu-gP-agk" secondAttribute="bottom" constant="3" id="tvx-SL-fOa"/>
+                            <constraint firstItem="DCu-Pr-mEk" firstAttribute="top" secondItem="1Xu-gP-agk" secondAttribute="bottom" constant="6" id="tvx-SL-fOa"/>
                             <constraint firstItem="DCu-Pr-mEk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="wGT-cC-XPe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WJf-Rb-HGF" secondAttribute="trailing" constant="15" id="z1p-Wx-lBb"/>
                             <constraint firstItem="MQP-sm-e29" firstAttribute="top" secondItem="xTS-sb-FhW" secondAttribute="bottom" constant="20" id="zaK-cH-nzX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ft0-pu-LC3"/>
                     <connections>
+                        <outlet property="copyLogsBtn" destination="5Vu-zG-htt" id="XZ7-st-aeE"/>
+                        <outlet property="copyTokenBtn" destination="WJf-Rb-HGF" id="4TB-eB-fdT"/>
                         <outlet property="enableNotificationsBtn" destination="3rx-fc-21M" id="fA3-qu-G45"/>
                         <outlet property="eventLogTextView" destination="DCu-Pr-mEk" id="IRT-HQ-0mL"/>
                         <outlet property="jwtTextview" destination="XGa-Tn-y93" id="2wD-hK-aJl"/>
@@ -250,6 +280,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="doc.on.doc" catalog="system" width="116" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

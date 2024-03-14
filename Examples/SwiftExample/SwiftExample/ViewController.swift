@@ -7,12 +7,10 @@
 
 import UIKit
 import messenger_sdk_ios
-import UserNotifications
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var urlTextfield: UITextField!
-
     @IBOutlet weak var jwtTextview: UITextView!
     @IBOutlet weak var userinfoTextview: UITextView!
     @IBOutlet weak var updateBtn: UIButton!
@@ -22,10 +20,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var openMessengetBtn: UIButton!
     @IBOutlet weak var openNewChatBtn: UIButton!
     @IBOutlet weak var eventLogTextView: UITextView!
+    @IBOutlet weak var copyTokenBtn: UIButton!
+    @IBOutlet weak var copyLogsBtn: UIButton!
     
     var messenger: DeskPro?
     
-    var appUrl = "https://dev-pr-12927.earthly.deskprodemo.com/deskpro-messenger/deskpro/1/d"
+    var appUrl = "https://master.earthly.deskprodemo.com/deskpro-messenger/00000000-0000-0000-0000-000000000000/0000000000HXER9KCGYDS93Z21/%7B%22platform%22%3A%22IOS%22%7D"
     var userJSON = """
     {
         "name": "",
@@ -35,6 +35,9 @@ class ViewController: UIViewController {
     }
     """
     
+    let pasteboard = UIPasteboard.general
+    var deviceToken: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,15 +46,25 @@ class ViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
     
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            appDelegate.pushNotificationDelegate = self
+        }
+
         urlTextfield.keyboardType = .URL
         urlTextfield.text = appUrl
         
         jwtTextview.delegate = self
+        jwtTextview.layer.cornerRadius = 4
+        jwtTextview.clipsToBounds = true
         
         userinfoTextview.delegate = self
         userinfoTextview.text = userJSON
+        userinfoTextview.layer.cornerRadius = 4
+        userinfoTextview.clipsToBounds = true
         
         eventLogTextView.isEditable = false
+        eventLogTextView.layer.cornerRadius = 4
+        eventLogTextView.clipsToBounds = true
     }
     
     @objc func dismissKeyboard() {
@@ -104,17 +117,47 @@ class ViewController: UIViewController {
         let messengerConfig = MessengerConfig(appUrl: appUrl, appId: "1")
         messenger = DeskPro(messengerConfig: messengerConfig, containingViewController: self)
         messenger?.eventRouter.handleEventCallback = { [weak self] event in
-            self?.eventLogTextView.text.append(event.debugDescription + "\n")
+            self?.logEvent(event.debugDescription)
         }
         messenger?.present().show()
     }
     
     @IBAction func openNewChatBtnTapped(_ sender: Any) {}
     
+    @IBAction func copyTokenBtnTapped(_ sender: Any) {
+        pasteboard.string = deviceToken
+        self.showToast(message: "Device token copied to clipboard", font: .systemFont(ofSize: 13.0))
+    }
+    
+    @IBAction func copyLogsBtnTapped(_ sender: Any) {
+        pasteboard.string = eventLogTextView.text
+        self.showToast(message: "Logs copied to clipboard", font: .systemFont(ofSize: 13.0))
+    }
+    
     private func logEvent(_ text: String) {
-        eventLogTextView.text.append(("\(Date.nowString) [AppEvent] \(text)" + "\n"))
+        let dashes = addLineOfDashes()
+        
+        eventLogTextView.text.append(("\(Date.nowString) [AppEvent] \(text)" + dashes))
         let bottom = NSMakeRange(eventLogTextView.text.count - 1, 1)
         eventLogTextView.scrollRangeToVisible(bottom)
+    }
+    
+    private func addLineOfDashes() -> String {
+        let dash = "-"
+        let dashWidth = dash.size(withAttributes: [.font: eventLogTextView.font!]).width
+        let textViewWidth = eventLogTextView.frame.width - eventLogTextView.textContainerInset.left - eventLogTextView.textContainerInset.right - 2 * eventLogTextView.textContainer.lineFragmentPadding
+        let numberOfDashes = Int(floor(textViewWidth / dashWidth))
+        
+        return "\n\(String(repeating: dash, count: numberOfDashes))\n"
+    }
+}
+
+extension ViewController: PushNotificationDelegate {
+    
+    func didRegisterForRemoteNotifications(withDeviceToken token: String, type: TokenType) {
+        messenger?.setPushRegistrationToken(token: token)
+        deviceToken = token
+        self.logEvent("Fetched \(type) successfully: \(token)")
     }
 }
 
@@ -133,7 +176,7 @@ extension UIViewController {
     
     func showToast(message : String, font: UIFont) {
         
-        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 100, y: self.view.frame.size.height-100, width: 200, height: 45))
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 120, y: self.view.frame.size.height-100, width: 240, height: 45))
         toastLabel.backgroundColor = UIColor.black
         toastLabel.textColor = UIColor.white
         toastLabel.font = font
