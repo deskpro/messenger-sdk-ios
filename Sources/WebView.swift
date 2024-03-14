@@ -310,7 +310,7 @@ private enum InjectionScripts {
     window.DESKPRO_MESSENGER_OPTIONS = {
         showLauncherButton: false,
         openOnInit: true,
-        userInfo: { name: "john" },
+        userInfo: window.webkit.messageHandlers.iosListener.postMessage("\(PostMessageFunctions.getUserInfo)"),
         signedUserInfo: undefined,
         launcherButtonConfig: undefined,
         messengerAppConfig: undefined,
@@ -322,10 +322,10 @@ private enum InjectionScripts {
         ready: async (messengerId) => {
           const data = await window.DESKPRO_MESSENGER_CONNECTION.childMethods?.init(messengerId, {
             showLauncherButton: DESKPRO_MESSENGER_OPTIONS.showLauncherButton,
-            user: window.DESKPRO_MESSENGER_OPTIONS?.userInfo,
+            userInfo: window.DESKPRO_MESSENGER_OPTIONS?.userInfo,
             launcherButtonConfig: DESKPRO_MESSENGER_OPTIONS.launcherButtonConfig,
             messengerAppConfig: DESKPRO_MESSENGER_OPTIONS.messengerAppConfig,
-            parentViewHeight: "fullscreen",
+            parentViewDimensions: "fullscreen",
             open: DESKPRO_MESSENGER_OPTIONS.openOnInit,
           });
 
@@ -339,16 +339,10 @@ private enum InjectionScripts {
               token: deviceToken
           });
         },
-        getViewHeight: async (messengerId) => {
+        getViewDimensions: async (messengerId) => {
           return "fullscreen";
         },
-        getUserInfo: async (messengerId) => {
-            window.webkit.messageHandlers.iosListener.postMessage("\(PostMessageFunctions.getUserInfo)")
-            .then(response => {
-                //alert(response);
-            })
-        },
-        getUserJwtToken: async (messengerId) => {
+        getSignedUserInfo: async (messengerId) => {
             window.webkit.messageHandlers.iosListener.postMessage("\(PostMessageFunctions.getUserJwtToken)")
             .then(response => {
                 //alert(response);
@@ -358,7 +352,7 @@ private enum InjectionScripts {
             const { width, height } = data;
         },
         close: async (messengerId, data) => {
-            window.webkit.messageHandlers.iosListener.postMessage("\(PostMessageFunctions.closeWebView)")
+            const result = await window.webkit.messageHandlers.iosListener.postMessage("\(PostMessageFunctions.closeWebView)")
         },
         appEvent: async (messengerId, event) => {
             //alert(event.id)
@@ -368,5 +362,9 @@ private enum InjectionScripts {
       },
       childMethods: undefined,
     };
+    """
+    
+    static let logoutScript = """
+        window.DESKPRO_MESSENGER_CONNECTION.childMethods.logout("1");
     """
 }
