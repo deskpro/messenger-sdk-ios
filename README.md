@@ -55,6 +55,23 @@ messenger?.present().show()
 
 Note: You can create multiple Messenger instances.
 
+### Setting user info
+```
+messenger?.setUserInfo(user: userObject)
+```
+Note: User(name, firstName, lastName, email)
+
+### Authorize user
+```
+messenger?.authorizeUser(jwtToken: jwtToken)
+```
+
+### Push notifications
+```
+messenger?.setPushRegistrationToken(token: token)
+```
+Prerequisite: The application should be connected to the notifications platform, enabled for receiving notifications and obtaining tokens.
+
 ## Versioning
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/deskpro/messenger-sdk-ios/tags).
 
