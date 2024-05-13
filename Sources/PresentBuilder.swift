@@ -13,13 +13,13 @@ import UIKit
 ///  The final constructed path can then be presented in a WebView using the [show](x-source-tag://show) method.
 ///
 ///- Tag: PresentBuilder
-public final class PresentBuilder {
+@objc public final class PresentBuilder: NSObject {
     
     ///  The coordinator for easier WebView presentation handling.
     private weak var coordinator: PresentCoordinator?
     
     ///  The base URL for constructing the path.
-    public var url: String
+    @objc public var url: String
     
     ///  The application ID used for presentation.
     private var appId: String
@@ -36,7 +36,7 @@ public final class PresentBuilder {
     /// - Parameter url: The base URL for constructing the path.
     /// - Parameter appId: The application ID used for presentation.
     /// - Parameter coordinator: The coordinator for easier webView presentation handling
-    public init(url: String, appId: String, coordinator: PresentCoordinator) {
+    @objc public init(url: String, appId: String, coordinator: PresentCoordinator) {
         self.url = url
         self.appId = appId
         self.path = path.appending(url)
@@ -48,7 +48,7 @@ public final class PresentBuilder {
     /// - Parameter chatId: The identifier of the chat for which the history is requested.
     ///
     /// - Returns: The [PresentBuilder](x-source-tag://PresentBuilder) instance for method chaining.
-    public final func chatHistory(_ chatId: Int) -> PresentBuilder {
+    @objc public final func chatHistory(_ chatId: Int) -> PresentBuilder {
         path.append("/chat_history/\(chatId)")
         return self
     }
@@ -58,7 +58,7 @@ public final class PresentBuilder {
     /// - Parameter articleId: The identifier of the article to be presented.
     ///
     /// - Returns: The [PresentBuilder](x-source-tag://PresentBuilder) instance for method chaining.
-    public final func article(_ articleId: Int) -> PresentBuilder {
+    @objc public final func article(_ articleId: Int) -> PresentBuilder {
         path.append("/article/\(articleId)")
         return self
     }
@@ -66,7 +66,7 @@ public final class PresentBuilder {
     ///   Appends the comments path to the constructed URL path.
     ///
     /// - Returns: The [PresentBuilder](x-source-tag://PresentBuilder) instance for method chaining.
-    public final func comments() -> PresentBuilder {
+    @objc public final func comments() -> PresentBuilder {
         path.append("/comments")
         return self
     }
@@ -76,7 +76,7 @@ public final class PresentBuilder {
     ///   If the application context is null, a message is logged, and the method returns early. Otherwise, the WebView is started with the constructed path and application ID.
     ///
     ///- Tag: show
-    public final func show() {
+    @objc public final func show() {
         coordinator?.present(path: path, appId: appId)
     }
 }

@@ -11,7 +11,7 @@ import UIKit
 ///  The `DeskPro` class provides methods for initializing the Messenger, managing user information,
 ///  handling push notifications, and presenting the DeskPro messaging interface.
 ///
-public final class DeskPro: Messenger {
+@objc public final class DeskPro: NSObject, Messenger {
     
     private var messengerConfig: MessengerConfig
     
@@ -19,10 +19,10 @@ public final class DeskPro: Messenger {
     private var coordinator: PresentCoordinator
     
     ///  User defaults manager for storing user-related information.
-    var appUserDefaults: AppUserDefaults
+    var appUserDefaults: DeskproUserDefaults
     
     ///  Each Deskpro instance is having its own eventRouter to handle events in chat.
-    public var eventRouter: EventRouter
+    @objc public var eventRouter: EventRouter
     
     ///  Initializes the functionality of the application.
     ///
@@ -30,11 +30,11 @@ public final class DeskPro: Messenger {
     ///
     ///- Parameter messengerConfig: The configuration object containing settings for the DeskPro Messenger.
     ///
-    public init(messengerConfig: MessengerConfig, containingViewController: UIViewController, enableAutologging: Bool = false) {
+    @objc public init(messengerConfig: MessengerConfig, containingViewController: UIViewController, enableAutologging: Bool = false) {
         self.eventRouter = .init(enableAutologging: enableAutologging)
         self.messengerConfig = messengerConfig
         self.coordinator = PresentCoordinator(containingViewController: containingViewController, eventRouter: eventRouter)
-        self.appUserDefaults = AppUserDefaults(appId: messengerConfig.appId)
+        self.appUserDefaults = DeskproUserDefaults(appId: messengerConfig.appId)
     }
     
     ///   Performs a test operation and returns a result as a String.
@@ -42,7 +42,7 @@ public final class DeskPro: Messenger {
     ///   The method is intended to simulate a test scenario and provide a String result based on the outcome of the test.
     ///
     /// - Returns: A String representing the result of the test operation.
-    public static func test() -> String {
+    @objc public static func test() -> String {
         return "Hello world from Messenger!"
     }
     
@@ -53,7 +53,7 @@ public final class DeskPro: Messenger {
     ///
     /// - Parameter user: The [User](x-source-tag://User) object containing the user information.
     ///
-    public final func setUserInfo(user: User) {
+    @objc public final func setUserInfo(user: User) {
         appUserDefaults.setUserInfo(user)
     }
     
@@ -73,7 +73,7 @@ public final class DeskPro: Messenger {
     ///
     /// - Returns: `true` if the token is successfully saved, `false` otherwise.
     @discardableResult
-    public final func authorizeUser(userJwt: String) -> Bool {
+    @objc public final func authorizeUser(userJwt: String) -> Bool {
         appUserDefaults.setJwtToken(userJwt)
         return true
     }
@@ -89,7 +89,7 @@ public final class DeskPro: Messenger {
     ///
     /// - Returns: `true` if the logout operation is successful; `false` otherwise.
     @discardableResult
-    public final func forgetUser() -> Bool {
+    @objc public final func forgetUser() -> Bool {
         appUserDefaults.clear()
         return true
     }
@@ -102,7 +102,7 @@ public final class DeskPro: Messenger {
     ///
     /// - Returns: `true` if the push registration token is successfully set; `false` otherwise.
     @discardableResult
-    public final func setPushRegistrationToken(token: String) -> Bool {
+    @objc public final func setPushRegistrationToken(token: String) -> Bool {
         appUserDefaults.setDeviceToken(token)
         return true
     }
@@ -121,7 +121,7 @@ public final class DeskPro: Messenger {
     /// - Returns: `true` if the push notification is related to DeskPro; `false` otherwise.
     ///
     /// - Tag: isDeskProPushNotification
-    public static func isDeskProPushNotification(data: [AnyHashable: Any]) -> Bool {
+    @objc public static func isDeskProPushNotification(data: [AnyHashable: Any]) -> Bool {
         if let issuer = data["issuer"] as? String {
             return issuer == "deskpro-messenger"
         } else {
@@ -137,7 +137,7 @@ public final class DeskPro: Messenger {
     ///
     /// - Parameter pushNotification: The push notification data to be handled.
     ///
-    public final func handlePushNotification(pushNotification: PushNotificationData) {
+    @objc public final func handlePushNotification(pushNotification: PushNotificationData) {
         // TODO: Not yet implemented
     }
     
@@ -147,7 +147,7 @@ public final class DeskPro: Messenger {
     ///
     /// - Returns: A [PresentBuilder](x-source-tag://PresentBuilder) instance to start building presentation paths.
     ///
-    public final func present() -> PresentBuilder {
+    @objc public final func present() -> PresentBuilder {
         let url = messengerConfig.appUrl//.appending(messengerConfig.appId)
         //return PresentBuilder(url: url, containingViewController: containingViewController)
         return PresentBuilder(url: url, appId: messengerConfig.appId, coordinator: coordinator)
@@ -157,7 +157,7 @@ public final class DeskPro: Messenger {
     ///
     ///   This method closes the currently displayed chat view, terminating the user's interaction with the DeskPro content.
     ///
-    public final func close() {
+    @objc public final func close() {
         // TODO: Not yet implemented
     }
     
@@ -167,7 +167,7 @@ public final class DeskPro: Messenger {
     ///
     /// - Returns: The number of unread conversations in the inbox.
     ///
-    public final func getUnreadConversationCount() -> Int {
+    @objc public final func getUnreadConversationCount() -> Int {
         // TODO: Not yet implemented
         return 0
     }
@@ -176,7 +176,8 @@ public final class DeskPro: Messenger {
     ///
     ///   This method turns on logging for the DeskPro SDK, allowing detailed information to be logged for debugging and troubleshooting purposes.
     ///
-    public final func enableLogging() {
+    @objc public final func enableLogging() {
         // TODO: Not yet implemented
     }
 }
+

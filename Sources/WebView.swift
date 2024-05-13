@@ -32,7 +32,7 @@ final class CustomWebView: UIViewController {
     weak var delegate: WebViewDelegate?
     
     ///  UserDefaults utility for managing user information and JWT tokens.
-    var appUserdefaults: AppUserDefaults?
+    var appUserdefaults: DeskproUserDefaults?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,7 +117,7 @@ final class CustomWebView: UIViewController {
     final func configure(_ url: URL, _ appId: String) {
         self.url = url
         self.appId = appId
-        self.appUserdefaults = AppUserDefaults(appId: appId)
+        self.appUserdefaults = DeskproUserDefaults(appId: appId)
     }
     
     private final func evaluateJSFromSwift(script: String) {

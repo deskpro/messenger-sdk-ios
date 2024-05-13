@@ -9,7 +9,7 @@ import Foundation
 ///   UserDefaults utility class for managing user information and JWT tokens in the DeskPro Messenger module.
 ///
 ///   The class provides methods for retrieving, storing, and clearing user information, device tokens and JWT tokens using the UserDefaults API.
-class AppUserDefaults {
+final class DeskproUserDefaults {
 
     ///   UserDefaults instance.
     let prefs = UserDefaults.standard
