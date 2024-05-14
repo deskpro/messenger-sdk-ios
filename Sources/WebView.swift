@@ -64,7 +64,6 @@ final class CustomWebView: UIViewController {
         webView.navigationDelegate = self
         webView.uiDelegate = self
         webView.allowsBackForwardNavigationGestures = true
-        webView.allowsLinkPreview = true
         
         view.addSubview(webView)
     }
@@ -308,7 +307,7 @@ private enum PostMessageFunctions: String {
 private enum InjectionScripts {
     
     static let initAndOpenScript = """
-    window.DESKPRO_MESSENGER_OPTIONS = {
+    window.DpMessengerOptions = {
         showLauncherButton: false,
         openOnInit: true,
         userInfo: window.webkit.messageHandlers.iosListener.postMessage("\(PostMessageFunctions.getUserInfo)"),
@@ -318,16 +317,16 @@ private enum InjectionScripts {
         urlCacheableConfig: undefined,
     };
 
-    window.DESKPRO_MESSENGER_CONNECTION = {
+    window.DpMessengerConnection = {
       parentMethods: {
         ready: async (messengerId) => {
-          const data = await window.DESKPRO_MESSENGER_CONNECTION.childMethods?.init(messengerId, {
-            showLauncherButton: DESKPRO_MESSENGER_OPTIONS.showLauncherButton,
-            userInfo: window.DESKPRO_MESSENGER_OPTIONS?.userInfo,
-            launcherButtonConfig: DESKPRO_MESSENGER_OPTIONS.launcherButtonConfig,
-            messengerAppConfig: DESKPRO_MESSENGER_OPTIONS.messengerAppConfig,
+          const data = await window.DpMessengerConnection.childMethods?.init(messengerId, {
+            showLauncherButton: DpMessengerOptions.showLauncherButton,
+            userInfo: window.DpMessengerOptions?.userInfo,
+            launcherButtonConfig: DpMessengerOptions.launcherButtonConfig,
+            messengerAppConfig: DpMessengerOptions.messengerAppConfig,
             parentViewDimensions: "fullscreen",
-            open: DESKPRO_MESSENGER_OPTIONS.openOnInit,
+            open: DpMessengerOptions.openOnInit,
           });
 
           if (data) {
@@ -336,7 +335,7 @@ private enum InjectionScripts {
     
           const deviceToken = await window.webkit.messageHandlers.iosListener.postMessage("\(PostMessageFunctions.getDeviceToken)");
           
-          window.DESKPRO_MESSENGER_CONNECTION.childMethods?.setDeviceToken(messengerId, {
+          window.DpMessengerConnection.childMethods?.setDeviceToken(messengerId, {
               token: deviceToken
           });
         },
@@ -366,6 +365,6 @@ private enum InjectionScripts {
     """
     
     static let logoutScript = """
-        window.DESKPRO_MESSENGER_CONNECTION.childMethods.logout("1");
+        window.DpMessengerConnection.childMethods.logout("1");
     """
 }
