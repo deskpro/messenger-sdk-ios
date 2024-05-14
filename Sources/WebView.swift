@@ -64,6 +64,7 @@ final class CustomWebView: UIViewController {
         webView.navigationDelegate = self
         webView.uiDelegate = self
         webView.allowsBackForwardNavigationGestures = true
+        webView.allowsLinkPreview = true
         
         view.addSubview(webView)
     }
