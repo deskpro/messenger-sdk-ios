@@ -21,7 +21,16 @@ import Foundation
         self.email = email
     }
     
+    /// Objective-C compatible equality check
+    @objc public func isEqualToUser(_ user: User) -> Bool {
+        return self.name == user.name && self.first_name == user.first_name && self.last_name == user.last_name && self.email == user.email
+    }
+}
+
+/// Extend the Swift functionality to still support the == operator in Swift contexts
+extension User {
+    
     public static func == (lhs: User, rhs: User) -> Bool {
-        return lhs.name == rhs.name && lhs.first_name == rhs.first_name && lhs.last_name == rhs.last_name && lhs.email == rhs.email
+        return lhs.isEqualToUser(rhs)
     }
 }
