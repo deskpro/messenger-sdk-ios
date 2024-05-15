@@ -3,8 +3,8 @@
 
 # messenger-sdk-ios
 
-![Messenger SDK iOS SWIFT](https://img.shields.io/badge/Swift-5.7_5.8_5.9-Orange?style=flat-square)
 ![Messenger SDK iOS OS](https://img.shields.io/badge/Platforms-_iOS_-Green?style=flat-square)
+![Messenger SDK iOS LANGUAGES](https://img.shields.io/badge/Languages-Swift_|_ObjC-orange?style=flat-square)
 ![Messenger SDK iOS SPM](https://img.shields.io/badge/Swift_Package_Manager-compatible-green?style=flat-square)
 ![Messenger SDK iOS CI](https://github.com/deskpro/messenger-sdk-ios/actions/workflows/main.yml/badge.svg)
 
@@ -26,7 +26,7 @@ DeskPro iOS Messenger is a Chat/AI/Messaging product. You can embed a â€œwidgetâ
 ## Manual installation
 Although we recommend using SPM, it is also possible to clone this repository manually, and drag and drop it into the root folder of the application.
 
-## Setup and Initialization
+## Initialization (Swift)
 First, import the SDK:
 ```
 import messenger_sdk_ios
@@ -53,24 +53,76 @@ To open a Messenger, paste this line example in the desired place:
 messenger?.present().show()
 ```
 
+
+## Initialization (Objective-C)
+First, import the SDK:
+```
+@import messenger_sdk_ios;
+```
+
+Then, in your ViewController.h:
+```
+@property (strong, nonatomic) MessengerConfig *messengerConfig;
+@property (strong, nonatomic) DeskPro *messenger;
+```
+
+Then, in your ViewController.m:
+```
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    self.messengerConfig = [[MessengerConfig alloc] initWithAppUrl:@"YOUR_APP_URL" appId:@"YOUR_APP_ID" appKey:@"YOUR_APP_KEY"];
+    self.messenger = [[DeskPro alloc] initWithMessengerConfig:self.messengerConfig containingViewController:self enableAutologging:false];
+}
+```
+
+Replace `YOUR_APP_URL` and `YOUR_APP_ID` with your app's URL and ID, and `YOUR_APP_KEY` with you app's KEY, or nil.
+
+
+To open a Messenger, paste this line example in the desired place:
+```
+[[self.messenger present] show];
+```
+
+
 Note: You can create multiple Messenger instances.
 
-### Setting user info
+
+### Setting user info (Swift)
 ```
 messenger?.setUserInfo(user: userObject)
 ```
+
+### Setting user info (Objective-C)
+```
+[self.messenger setUserInfoWithUser:userObject];
+```
+
 Note: User(name, firstName, lastName, email)
 
-### Authorize user
+### Authorize user (Swift)
 ```
 messenger?.authorizeUser(jwtToken: jwtToken)
 ```
 
-### Push notifications
+### Authorize user (Objective-C)
+```
+[self.messenger authorizeUserWithUserJwt:jwtToken];
+```
+
+### Push notifications (Swift)
 ```
 messenger?.setPushRegistrationToken(token: token)
 ```
+
+### Push notifications (Objective-C)
+```
+[self.messenger setPushRegistrationTokenWithToken:token];
+```
+
+
 Prerequisite: The application should be connected to the notifications platform, enabled for receiving notifications and obtaining tokens.
+
 
 ## Versioning
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/deskpro/messenger-sdk-ios/tags).
