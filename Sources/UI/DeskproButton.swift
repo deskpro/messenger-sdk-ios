@@ -7,13 +7,13 @@
 import UIKit
 
 ///  DeskproButton is a customizable, rounded UIButton subclass that provides an easy way to create a floating action button with shadow effects and configurable positioning within a view. It supports setting images, colors, and position with minimal setup.
-public class DeskproButton: UIButton {
+@objc public class DeskproButton: UIButton {
 
     ///  Stores the width (and height, as it's a circle) of the button.
     private var sizeWidth: CGFloat = 56
     
     ///  Initializes the button with a specified size. Default size is 56.
-    public init(size: CGFloat = 56) {
+    @objc public init(size: CGFloat = 56) {
         super.init(frame: .zero)
         self.sizeWidth = size
         self.frame.size = CGSize(width: sizeWidth, height: sizeWidth)
@@ -40,7 +40,7 @@ public class DeskproButton: UIButton {
     }
     
     ///  Sets the button image with an optional tint color.
-    public func setImage(named imageName: String, color: UIColor? = nil) {
+    @objc public func setImage(named imageName: String, color: UIColor? = nil) {
         let image = UIImage(named: imageName)
         self.setImage(image, for: .normal)
         self.imageView?.contentMode = .scaleAspectFit
@@ -54,10 +54,23 @@ public class DeskproButton: UIButton {
     }
 
     ///   Sets the background color of the button.
-    public func setColor(_ color: UIColor) {
+    @objc public func setColor(_ color: UIColor) {
         self.backgroundColor = color
     }
     
+    @objc public func setPosition(_ position: ObjcButtonPosition, inView view: UIView, x: CGFloat = 16, y: CGFloat = 16) {
+        let position = switch position {
+        case .bottomLeft: ButtonPosition.bottomLeft
+        case .bottomRight: ButtonPosition.bottomRight
+        case .topLeft: ButtonPosition.topLeft
+        case .topRight: ButtonPosition.topRight
+        }
+        setPosition(position, inView: view, x: x, y: y)
+    }
+    
+    @objc public func setCustomPosition(position: CGPoint, inView view: UIView) {
+        setPosition(.custom(position), inView: view)
+    }
     ///  Positions the button within the specified view. Allows for predefined positions (top/bottom, left/right) or a custom point.
     public func setPosition(_ position: ButtonPosition, inView view: UIView, x: CGFloat = 16, y: CGFloat = 16) {
         self.translatesAutoresizingMaskIntoConstraints = false
@@ -90,5 +103,14 @@ public class DeskproButton: UIButton {
         case topLeft, topRight, bottomLeft, bottomRight
         case custom(CGPoint)
     }
+    
+    @objc public enum ObjcButtonPosition: Int {
+        case topLeft, topRight, bottomLeft, bottomRight
+    }
 }
 
+///  Main app colors.
+extension UIColor {
+   static let deskproLightBlue = UIColor(red: 58/255.0, green: 141/255.0, blue: 222/255.0, alpha: 1.0)
+   static let deskproDarkBlue = UIColor(red: 5/255.0, green: 100/255.0, blue: 192/255.0, alpha: 1.0)
+}
