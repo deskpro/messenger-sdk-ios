@@ -109,3 +109,8 @@ import UIKit
     }
 }
 
+///  Main app colors.
+extension UIColor {
+   static let deskproLightBlue = UIColor(red: 58/255.0, green: 141/255.0, blue: 222/255.0, alpha: 1.0)
+   static let deskproDarkBlue = UIColor(red: 5/255.0, green: 100/255.0, blue: 192/255.0, alpha: 1.0)
+}

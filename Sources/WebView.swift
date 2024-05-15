@@ -13,12 +13,6 @@ protocol WebViewDelegate: AnyObject {
     func eventOccured(_ event: DeskproEvent)
 }
 
-///  Main app colors.
-extension UIColor {
-   static let deskproLightBlue = UIColor(red: 58/255.0, green: 141/255.0, blue: 222/255.0, alpha: 1.0)
-   static let deskproDarkBlue = UIColor(red: 5/255.0, green: 100/255.0, blue: 192/255.0, alpha: 1.0)
-}
-
 ///  The ViewController hosting WebView for DeskPro Messenger functionality. It manages the WebView, handles WebView configuration, and sets up communication with JavaScript. It also handles WebView lifecycle events and error handling.
 final class CustomWebView: UIViewController {
     
@@ -47,14 +41,6 @@ final class CustomWebView: UIViewController {
         super.viewWillDisappear(true)
         delegate?.webViewDismissed()
     }
-    
-    ///  Triggered when device changes the interface style to light or dark.
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        if #available(iOS 12.0, *) {
-            webView.scrollView.backgroundColor = traitCollection.userInterfaceStyle == .dark ? .deskproDarkBlue : .deskproLightBlue
-        }
-    }
 
     ///  Basic WebView setup.
     private final func setupWebView() {
@@ -78,9 +64,6 @@ final class CustomWebView: UIViewController {
         } else {
             activityIndicator.style = .whiteLarge
         }
-        if #available(iOS 12.0, *) {
-            activityIndicator.color = traitCollection.userInterfaceStyle == .dark ? .deskproDarkBlue : .deskproLightBlue
-        }
         
         view.addSubview(activityIndicator)
     }
@@ -99,10 +82,15 @@ final class CustomWebView: UIViewController {
     final func loadUrlInWebView() {
         if let url = url {
             let request = URLRequest(url: url)
+            clearCookies()
             webView.load(request)
         } else {
             dprint("Url not provided")
         }
+    }
+    
+    private final func clearCookies() {
+        HTTPCookieStorage.shared.cookies?.forEach(HTTPCookieStorage.shared.deleteCookie)
     }
     
     private final func showActivityIndicator(show: Bool) {
@@ -133,17 +121,15 @@ final class CustomWebView: UIViewController {
 
 extension CustomWebView: WKNavigationDelegate {
     
-    ///   We are allowing users to swipe back to navigate, but only when they leave the chat, e.g. when they tap the "Powered by Deskpro" label which leads to the Deskpro web.
-    final func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        if let host = navigationAction.request.url?.host {
-            if host.contains("deskprodemo") {
-                webView.allowsBackForwardNavigationGestures = false
-            } else {
-                webView.allowsBackForwardNavigationGestures = true
-            }
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        guard case .linkActivated = navigationAction.navigationType,
+              let url = navigationAction.request.url
+        else {
+            decisionHandler(.allow)
+            return
         }
-        
-        decisionHandler(.allow)
+        decisionHandler(.cancel)
+        UIApplication.shared.open(url)
     }
     
     final func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
@@ -152,9 +138,6 @@ extension CustomWebView: WKNavigationDelegate {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             self?.showActivityIndicator(show: false)
-            if #available(iOS 12.0, *) {
-                webView.scrollView.backgroundColor = self?.traitCollection.userInterfaceStyle == .dark ? .deskproDarkBlue : .deskproLightBlue
-            }
         }
     }
     
