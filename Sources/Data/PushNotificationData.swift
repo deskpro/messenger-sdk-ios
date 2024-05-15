@@ -9,6 +9,6 @@ import Foundation
 ///Data class representing the payload of a push notification.
 ///
 ///The class encapsulates the information included in a push notification.
-public class PushNotificationData {
+@objc public class PushNotificationData: NSObject {
     
 }
