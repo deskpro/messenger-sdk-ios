@@ -148,9 +148,23 @@ import UIKit
     /// - Returns: A [PresentBuilder](x-source-tag://PresentBuilder) instance to start building presentation paths.
     ///
     @objc public final func present() -> PresentBuilder {
-        let url = messengerConfig.appUrl//.appending(messengerConfig.appId)
-        //return PresentBuilder(url: url, containingViewController: containingViewController)
-        return PresentBuilder(url: url, appId: messengerConfig.appId, coordinator: coordinator)
+        let url = buildUrl(baseUrl: messengerConfig.appUrl, appId: messengerConfig.appId)
+        return PresentBuilder(url: url ?? "", appId: messengerConfig.appId, coordinator: coordinator)
+    }
+    
+    func buildUrl(baseUrl: String, appId: String) -> String? {
+        let platformData = ["platform": "IOS"]
+        
+        guard let platformJsonData = try? JSONSerialization.data(withJSONObject: platformData, options: []),
+              let platformJsonString = String(data: platformJsonData, encoding: .utf8),
+              let encodedPlatform = platformJsonString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+            return nil
+        }
+        
+        let formattedBaseUrl = baseUrl.trimmingCharacters(in: CharacterSet(charactersIn: "/"))
+        let formattedAppId = "/" + appId.trimmingCharacters(in: CharacterSet(charactersIn: "/"))
+        
+        return "\(formattedBaseUrl)\(formattedAppId)/\(encodedPlatform)"
     }
     
     ///   Closes the chat view presented by the DeskPro SDK.
