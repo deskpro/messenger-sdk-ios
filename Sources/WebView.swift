@@ -316,11 +316,11 @@ private enum InjectionScripts {
             const { side, offsetBottom, offsetSide, width, height } = data;
           }
     
-          const deviceToken = await window.webkit.messageHandlers.iosListener.postMessage("\(PostMessageFunctions.getDeviceToken)");
-          
-          window.DpMessengerConnection.childMethods?.setDeviceToken(messengerId, {
-              token: deviceToken
-          });
+    //          const deviceToken = await window.webkit.messageHandlers.iosListener.postMessage("\(PostMessageFunctions.getDeviceToken)");
+    //          
+    //          window.DpMessengerConnection.childMethods?.setDeviceToken(messengerId, {
+    //              token: deviceToken
+    //          });
         },
         getViewDimensions: async (messengerId) => {
           return "fullscreen";
