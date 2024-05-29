@@ -10,22 +10,26 @@ import messenger_sdk_ios
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var urlTextfield: UITextField!
+    @IBOutlet weak var appUrlTextfield: UITextField!
+    @IBOutlet weak var appIdTextfield: UITextField!
     @IBOutlet weak var jwtTextview: UITextView!
     @IBOutlet weak var userinfoTextview: UITextView!
-    @IBOutlet weak var updateBtn: UIButton!
+    @IBOutlet weak var appUrlUpdateBtn: UIButton!
+    @IBOutlet weak var appIdUpdateBtn: UIButton!
     @IBOutlet weak var setJwtButon: UIButton!
     @IBOutlet weak var setUserinfoBtn: UIButton!
     @IBOutlet weak var enableNotificationsBtn: UIButton!
     @IBOutlet weak var openMessengetBtn: UIButton!
-    @IBOutlet weak var openNewChatBtn: UIButton!
+    @IBOutlet weak var clearCookiesBtn: UIButton!
     @IBOutlet weak var eventLogTextView: UITextView!
     @IBOutlet weak var copyTokenBtn: UIButton!
     @IBOutlet weak var copyLogsBtn: UIButton!
     
     var messenger: DeskPro?
     
-    var appUrl = "https://master.earthly.deskprodemo.com/deskpro-messenger/00000000-0000-0000-0000-000000000000/0000000000HXER9KCGYDS93Z21/%7B%22platform%22%3A%22IOS%22%7D"
+    var appUrl = "https://master.earthly.deskprodemo.com/deskpro-messenger/00000000-0000-0000-0000-000000000000"
+    var appId = "/0000000000HXER9KCGYDS93Z21"
+
     var userJSON = """
     {
         "name": "",
@@ -50,8 +54,10 @@ class ViewController: UIViewController {
             appDelegate.pushNotificationDelegate = self
         }
 
-        urlTextfield.keyboardType = .URL
-        urlTextfield.text = appUrl
+        appUrlTextfield.keyboardType = .URL
+        appUrlTextfield.text = appUrl
+        
+        appIdTextfield.text = appId
         
         jwtTextview.delegate = self
         jwtTextview.layer.cornerRadius = 4
@@ -71,10 +77,18 @@ class ViewController: UIViewController {
         view.endEditing(true)
     }
     
-    @IBAction func updateBtnTapped(_ sender: Any) {
-        if let url = urlTextfield.text,
+    @IBAction func appUrlUpdateBtnTapped(_ sender: Any) {
+        if let url = appUrlTextfield.text,
            !url.isEmpty {
             appUrl = url
+        }
+        dismissKeyboard()
+    }
+    
+    @IBAction func appIdUpdateBtnTapped(_ sender: Any) {
+        if let id = appIdTextfield.text,
+           !id.isEmpty {
+            appId = id
         }
         dismissKeyboard()
     }
@@ -114,7 +128,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func openMessengerBtnTapped(_ sender: Any) {
-        let messengerConfig = MessengerConfig(appUrl: appUrl, appId: "1")
+        let messengerConfig = MessengerConfig(appUrl: appUrl, appId: appId)
         messenger = DeskPro(messengerConfig: messengerConfig, containingViewController: self)
         messenger?.eventRouter.handleEventCallback = { [weak self] event in
             self?.logEvent(event.debugDescription)
@@ -122,7 +136,10 @@ class ViewController: UIViewController {
         messenger?.present().show()
     }
     
-    @IBAction func openNewChatBtnTapped(_ sender: Any) {}
+    @IBAction func clearCookiesBtnTapped(_ sender: Any) {
+        HTTPCookieStorage.shared.cookies?.forEach(HTTPCookieStorage.shared.deleteCookie)
+        self.showToast(message: "Cookies cleared", font: .systemFont(ofSize: 13.0))
+    }
     
     @IBAction func copyTokenBtnTapped(_ sender: Any) {
         pasteboard.string = deviceToken

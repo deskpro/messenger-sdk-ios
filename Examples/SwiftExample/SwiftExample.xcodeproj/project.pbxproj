@@ -13,8 +13,8 @@
 		5E19F59B2B477AE400E37F55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E19F5992B477AE400E37F55 /* Main.storyboard */; };
 		5E19F59D2B477AE400E37F55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E19F59C2B477AE400E37F55 /* Assets.xcassets */; };
 		5E19F5A02B477AE400E37F55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E19F59E2B477AE400E37F55 /* LaunchScreen.storyboard */; };
-		5E66BF0C2B7FB63100FAF349 /* messenger-sdk-ios in Frameworks */ = {isa = PBXBuildFile; productRef = 5E66BF0B2B7FB63100FAF349 /* messenger-sdk-ios */; };
 		5E99636E2BA3339600F27D11 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E99636D2BA3339600F27D11 /* GoogleService-Info.plist */; };
+		5EF7619E2C077539007C3E73 /* messenger-sdk-ios in Frameworks */ = {isa = PBXBuildFile; productRef = 5EF7619D2C077539007C3E73 /* messenger-sdk-ios */; };
 		5EF899182B728D75005547BC /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5EF899172B728D75005547BC /* FirebaseAnalytics */; };
 		5EF899422B728D75005547BC /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 5EF899412B728D75005547BC /* FirebaseMessaging */; };
 /* End PBXBuildFile section */
@@ -52,7 +52,7 @@
 			files = (
 				5EF899182B728D75005547BC /* FirebaseAnalytics in Frameworks */,
 				5EF899422B728D75005547BC /* FirebaseMessaging in Frameworks */,
-				5E66BF0C2B7FB63100FAF349 /* messenger-sdk-ios in Frameworks */,
+				5EF7619E2C077539007C3E73 /* messenger-sdk-ios in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,7 +111,7 @@
 			packageProductDependencies = (
 				5EF899172B728D75005547BC /* FirebaseAnalytics */,
 				5EF899412B728D75005547BC /* FirebaseMessaging */,
-				5E66BF0B2B7FB63100FAF349 /* messenger-sdk-ios */,
+				5EF7619D2C077539007C3E73 /* messenger-sdk-ios */,
 			);
 			productName = SwiftExample;
 			productReference = 5E19F5902B477AE400E37F55 /* SwiftExample.app */;
@@ -143,7 +143,7 @@
 			mainGroup = 5E19F5872B477AE400E37F55;
 			packageReferences = (
 				5EF899162B728D75005547BC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				5E66BF0A2B7FB63100FAF349 /* XCRemoteSwiftPackageReference "messenger-sdk-ios" */,
+				5EF7619C2C077539007C3E73 /* XCRemoteSwiftPackageReference "messenger-sdk-ios" */,
 			);
 			productRefGroup = 5E19F5912B477AE400E37F55 /* Products */;
 			projectDirPath = "";
@@ -323,7 +323,7 @@
 				CODE_SIGN_ENTITLEMENTS = SwiftExample/SwiftExample.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = HC9N5Z797X;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -333,6 +333,7 @@
 				INFOPLIST_FILE = SwiftExample/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires camera access to take photos for uploading images directly from the camera.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app requires microphone access to record audio for video uploads directly from the camera.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app requires Photo Library Access for downloading photos.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -364,7 +365,7 @@
 				CODE_SIGN_ENTITLEMENTS = SwiftExample/SwiftExample.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = HC9N5Z797X;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -374,6 +375,7 @@
 				INFOPLIST_FILE = SwiftExample/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires camera access to take photos for uploading images directly from the camera.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app requires microphone access to record audio for video uploads directly from the camera.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app requires Photo Library Access for downloading photos.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -421,12 +423,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5E66BF0A2B7FB63100FAF349 /* XCRemoteSwiftPackageReference "messenger-sdk-ios" */ = {
+		5EF7619C2C077539007C3E73 /* XCRemoteSwiftPackageReference "messenger-sdk-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/deskpro/messenger-sdk-ios.git";
 			requirement = {
-				kind = exactVersion;
-				version = 0.0.10;
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.14;
 			};
 		};
 		5EF899162B728D75005547BC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
@@ -440,9 +442,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5E66BF0B2B7FB63100FAF349 /* messenger-sdk-ios */ = {
+		5EF7619D2C077539007C3E73 /* messenger-sdk-ios */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5E66BF0A2B7FB63100FAF349 /* XCRemoteSwiftPackageReference "messenger-sdk-ios" */;
+			package = 5EF7619C2C077539007C3E73 /* XCRemoteSwiftPackageReference "messenger-sdk-ios" */;
 			productName = "messenger-sdk-ios";
 		};
 		5EF899172B728D75005547BC /* FirebaseAnalytics */ = {
