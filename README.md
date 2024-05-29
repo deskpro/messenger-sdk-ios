@@ -124,6 +124,14 @@ messenger?.setPushRegistrationToken(token: token)
 Prerequisite: The application should be connected to the notifications platform, enabled for receiving notifications and obtaining tokens.
 
 
+
+## Privacy
+
+In order to make the file upload and download fully work, make sure to add these permissions with appropriate messages in your `Info.plist` file:
+- Privacy - Camera Usage Description
+- Privacy - Microphone Usage Description
+- Privacy - Photo Library Additions Usage Description
+
 ## Versioning
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/deskpro/messenger-sdk-ios/tags).
 
