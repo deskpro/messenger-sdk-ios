@@ -326,10 +326,9 @@ private enum InjectionScripts {
           return "fullscreen";
         },
         getSignedUserInfo: async (messengerId) => {
-            window.webkit.messageHandlers.iosListener.postMessage("\(PostMessageFunctions.getUserJwtToken)")
-            .then(response => {
-                //alert(response);
-            })
+            const jwt = await window.webkit.messageHandlers.iosListener.postMessage("\(PostMessageFunctions.getUserJwtToken)")
+            // alert(jwt)
+            return jwt
         },
         open: async (messengerId, data) => {
             const { width, height } = data;
