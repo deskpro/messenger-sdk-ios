@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E0A5DE22D3FDE710006FD00 /* UI+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0A5DE12D3FDE6B0006FD00 /* UI+Extensions.swift */; };
 		5E19F5942B477AE400E37F55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E19F5932B477AE400E37F55 /* AppDelegate.swift */; };
 		5E19F5962B477AE400E37F55 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E19F5952B477AE400E37F55 /* SceneDelegate.swift */; };
 		5E19F5982B477AE400E37F55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E19F5972B477AE400E37F55 /* ViewController.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5E0A5DE12D3FDE6B0006FD00 /* UI+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UI+Extensions.swift"; sourceTree = "<group>"; };
 		5E19F5902B477AE400E37F55 /* SwiftExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E19F5932B477AE400E37F55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E19F5952B477AE400E37F55 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				5E19F5932B477AE400E37F55 /* AppDelegate.swift */,
 				5E19F5952B477AE400E37F55 /* SceneDelegate.swift */,
 				5E19F5972B477AE400E37F55 /* ViewController.swift */,
+				5E0A5DE12D3FDE6B0006FD00 /* UI+Extensions.swift */,
 				5E19F5992B477AE400E37F55 /* Main.storyboard */,
 				5E19F59C2B477AE400E37F55 /* Assets.xcassets */,
 				5E19F59E2B477AE400E37F55 /* LaunchScreen.storyboard */,
@@ -176,6 +179,7 @@
 				5E19F5982B477AE400E37F55 /* ViewController.swift in Sources */,
 				5E19F5942B477AE400E37F55 /* AppDelegate.swift in Sources */,
 				5E19F5962B477AE400E37F55 /* SceneDelegate.swift in Sources */,
+				5E0A5DE22D3FDE710006FD00 /* UI+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,7 +327,7 @@
 				CODE_SIGN_ENTITLEMENTS = SwiftExample/SwiftExample.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = HC9N5Z797X;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -337,7 +341,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -365,7 +369,7 @@
 				CODE_SIGN_ENTITLEMENTS = SwiftExample/SwiftExample.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = HC9N5Z797X;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -379,7 +383,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -427,8 +431,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/deskpro/messenger-sdk-ios.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.14;
+				branch = main;
+				kind = branch;
 			};
 		};
 		5EF899162B728D75005547BC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
