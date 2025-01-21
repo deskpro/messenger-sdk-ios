@@ -1,4 +1,5 @@
 {
+  "originHash" : "e7fa54facbff2a44299998e056aa1862d3721d724dc26e573fd29dad02dd04e5",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -95,8 +96,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/deskpro/messenger-sdk-ios.git",
       "state" : {
-        "revision" : "759bdc8bc52bf063fd48a109b6a35f5cfa0ec14d",
-        "version" : "0.0.14"
+        "branch" : "main",
+        "revision" : "6d6f1c58a07b7d8f8d6f0fdb24b1bb6e85ec195b"
       }
     },
     {
@@ -127,5 +128,5 @@
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

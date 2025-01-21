@@ -44,16 +44,27 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.title = "Deskpro Test App"
-        
+
+        setupGestures()
+        setupNotifications()
+        setupUI()
+        setupMessenger()
+    }
+    
+    private final func setupGestures() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
+    }
     
+    private final func setupNotifications() {
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
             appDelegate.pushNotificationDelegate = self
         }
-
+    }
+    
+    private final func setupUI() {
+        self.title = "Deskpro Test App"
+        
         appUrlTextfield.keyboardType = .URL
         appUrlTextfield.text = appUrl
         
@@ -62,6 +73,7 @@ class ViewController: UIViewController {
         jwtTextview.delegate = self
         jwtTextview.layer.cornerRadius = 4
         jwtTextview.clipsToBounds = true
+        jwtTextview.text = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZXNrcHJvX2lkIjoxfQ.6v-I8iuINBMUrEVSECZCURTztv0j4q61F3Q0DZZTbuo"
         
         userinfoTextview.delegate = self
         userinfoTextview.text = userJSON
@@ -71,6 +83,11 @@ class ViewController: UIViewController {
         eventLogTextView.isEditable = false
         eventLogTextView.layer.cornerRadius = 4
         eventLogTextView.clipsToBounds = true
+    }
+    
+    private final func setupMessenger() {
+        let messengerConfig = MessengerConfig(appUrl: appUrl, appId: appId)
+        messenger = DeskPro(messengerConfig: messengerConfig, containingViewController: self)
     }
     
     @objc func dismissKeyboard() {
@@ -128,8 +145,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func openMessengerBtnTapped(_ sender: Any) {
-        let messengerConfig = MessengerConfig(appUrl: appUrl, appId: appId)
-        messenger = DeskPro(messengerConfig: messengerConfig, containingViewController: self)
+        
         messenger?.eventRouter.handleEventCallback = { [weak self] event in
             self?.logEvent(event.debugDescription)
         }
@@ -186,36 +202,5 @@ extension ViewController: UITextViewDelegate {
             return false
         }
         return true
-    }
-}
-
-extension UIViewController {
-    
-    func showToast(message : String, font: UIFont) {
-        
-        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 120, y: self.view.frame.size.height-100, width: 240, height: 45))
-        toastLabel.backgroundColor = UIColor.black
-        toastLabel.textColor = UIColor.white
-        toastLabel.font = font
-        toastLabel.textAlignment = .center;
-        toastLabel.text = message
-        toastLabel.alpha = 1.0
-        toastLabel.layer.cornerRadius = 10;
-        toastLabel.clipsToBounds  =  true
-        self.view.addSubview(toastLabel)
-        UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveLinear, animations: {
-            toastLabel.alpha = 0.0
-        }, completion: {(isCompleted) in
-            toastLabel.removeFromSuperview()
-        })
-    }
-}
-
-private extension Date {
-    
-    static var nowString: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        return dateFormatter.string(from: Date())
     }
 }
