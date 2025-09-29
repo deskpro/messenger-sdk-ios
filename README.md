@@ -21,7 +21,7 @@ DeskPro iOS Messenger is a Chat/AI/Messaging product. You can embed a â€œwidgetâ
 
 - File > Swift Packages > Add Package Dependency
 - Add `https://github.com/deskpro/messenger-sdk-ios`
-- Select "Up to Next Major" version
+- Select `Up to Next Major` version
 
 ## Manual installation
 Although we recommend using SPM, it is also possible to clone this repository manually, and drag and drop it into the root folder of the application.
