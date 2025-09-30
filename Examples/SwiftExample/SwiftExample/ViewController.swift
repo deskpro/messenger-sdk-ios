@@ -73,7 +73,6 @@ class ViewController: UIViewController {
         jwtTextview.delegate = self
         jwtTextview.layer.cornerRadius = 4
         jwtTextview.clipsToBounds = true
-        jwtTextview.text = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZXNrcHJvX2lkIjoxfQ.6v-I8iuINBMUrEVSECZCURTztv0j4q61F3Q0DZZTbuo"
         
         userinfoTextview.delegate = self
         userinfoTextview.text = userJSON
