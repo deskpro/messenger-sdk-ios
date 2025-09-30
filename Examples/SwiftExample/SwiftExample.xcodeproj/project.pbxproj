@@ -14,10 +14,10 @@
 		5E19F59B2B477AE400E37F55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E19F5992B477AE400E37F55 /* Main.storyboard */; };
 		5E19F59D2B477AE400E37F55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E19F59C2B477AE400E37F55 /* Assets.xcassets */; };
 		5E19F5A02B477AE400E37F55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E19F59E2B477AE400E37F55 /* LaunchScreen.storyboard */; };
+		5E4BE0AF2E8C55300090BF95 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5E4BE0AE2E8C55300090BF95 /* FirebaseAnalytics */; };
+		5E4BE0B12E8C55300090BF95 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 5E4BE0B02E8C55300090BF95 /* FirebaseMessaging */; };
 		5E99636E2BA3339600F27D11 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E99636D2BA3339600F27D11 /* GoogleService-Info.plist */; };
 		5EF7619E2C077539007C3E73 /* messenger-sdk-ios in Frameworks */ = {isa = PBXBuildFile; productRef = 5EF7619D2C077539007C3E73 /* messenger-sdk-ios */; };
-		5EF899182B728D75005547BC /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5EF899172B728D75005547BC /* FirebaseAnalytics */; };
-		5EF899422B728D75005547BC /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 5EF899412B728D75005547BC /* FirebaseMessaging */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,8 +52,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EF899182B728D75005547BC /* FirebaseAnalytics in Frameworks */,
-				5EF899422B728D75005547BC /* FirebaseMessaging in Frameworks */,
+				5E4BE0B12E8C55300090BF95 /* FirebaseMessaging in Frameworks */,
+				5E4BE0AF2E8C55300090BF95 /* FirebaseAnalytics in Frameworks */,
 				5EF7619E2C077539007C3E73 /* messenger-sdk-ios in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,9 +112,9 @@
 			);
 			name = SwiftExample;
 			packageProductDependencies = (
-				5EF899172B728D75005547BC /* FirebaseAnalytics */,
-				5EF899412B728D75005547BC /* FirebaseMessaging */,
 				5EF7619D2C077539007C3E73 /* messenger-sdk-ios */,
+				5E4BE0AE2E8C55300090BF95 /* FirebaseAnalytics */,
+				5E4BE0B02E8C55300090BF95 /* FirebaseMessaging */,
 			);
 			productName = SwiftExample;
 			productReference = 5E19F5902B477AE400E37F55 /* SwiftExample.app */;
@@ -145,8 +145,8 @@
 			);
 			mainGroup = 5E19F5872B477AE400E37F55;
 			packageReferences = (
-				5EF899162B728D75005547BC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				5EF7619C2C077539007C3E73 /* XCRemoteSwiftPackageReference "messenger-sdk-ios" */,
+				5E4BE0AD2E8C55300090BF95 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 5E19F5912B477AE400E37F55 /* Products */;
 			projectDirPath = "";
@@ -427,6 +427,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5E4BE0AD2E8C55300090BF95 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.3.0;
+			};
+		};
 		5EF7619C2C077539007C3E73 /* XCRemoteSwiftPackageReference "messenger-sdk-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/deskpro/messenger-sdk-ios.git";
@@ -435,31 +443,23 @@
 				kind = branch;
 			};
 		};
-		5EF899162B728D75005547BC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.20.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5E4BE0AE2E8C55300090BF95 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5E4BE0AD2E8C55300090BF95 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		5E4BE0B02E8C55300090BF95 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5E4BE0AD2E8C55300090BF95 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
 		5EF7619D2C077539007C3E73 /* messenger-sdk-ios */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5EF7619C2C077539007C3E73 /* XCRemoteSwiftPackageReference "messenger-sdk-ios" */;
 			productName = "messenger-sdk-ios";
-		};
-		5EF899172B728D75005547BC /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5EF899162B728D75005547BC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
-		5EF899412B728D75005547BC /* FirebaseMessaging */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5EF899162B728D75005547BC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseMessaging;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
