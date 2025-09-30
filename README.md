@@ -6,7 +6,6 @@
 ![Messenger SDK iOS OS](https://img.shields.io/badge/Platforms-_iOS_-Green?style=flat-square)
 ![Messenger SDK iOS LANGUAGES](https://img.shields.io/badge/Languages-Swift_|_ObjC-orange?style=flat-square)
 ![Messenger SDK iOS SPM](https://img.shields.io/badge/Swift_Package_Manager-compatible-green?style=flat-square)
-![Messenger SDK iOS CI](https://github.com/deskpro/messenger-sdk-ios/actions/workflows/main.yml/badge.svg)
 
 DeskPro iOS Messenger is a Chat/AI/Messaging product. You can embed a “widget” directly into native app, so that enables end-users to use the product. Similar implementation for [Android](https://github.com/deskpro/messenger-sdk-android).
 
@@ -21,7 +20,7 @@ DeskPro iOS Messenger is a Chat/AI/Messaging product. You can embed a “widget�
 
 - File > Swift Packages > Add Package Dependency
 - Add `https://github.com/deskpro/messenger-sdk-ios`
-- Select "Up to Next Major" version
+- Select `Up to Next Major` version
 
 ## Manual installation
 Although we recommend using SPM, it is also possible to clone this repository manually, and drag and drop it into the root folder of the application.
