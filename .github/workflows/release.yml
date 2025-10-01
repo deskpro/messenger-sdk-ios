@@ -1,0 +1,83 @@
+name: SDK Release
+
+on:
+  push:
+    branches:
+      - main   # only trigger on main branch
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout repo including all tags
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # ensure all tags are fetched
+
+      # Step 2: Get the latest tag (fallback to 0.1.0 if none found)
+      - name: Get latest tag
+        id: get_tag
+        run: |
+          latest=$(git tag --sort=-v:refname | head -n 1 || echo "0.1.0")
+          echo "latest=$latest" >> $GITHUB_OUTPUT
+
+      # Step 3: Determine next version (patch bump only)
+      - name: Determine next version
+        id: bump
+        run: |
+          latest="${{ steps.get_tag.outputs.latest }}"
+          echo "Latest tag: $latest"
+
+          IFS='.' read -r major minor patch <<< "$latest"
+
+          # Always bump patch
+          new_tag="$major.$minor.$((patch+1))"
+
+          # If tag already exists, keep incrementing
+          while git rev-parse "refs/tags/$new_tag" >/dev/null 2>&1; do
+            patch=$((patch+1))
+            new_tag="$major.$minor.$patch"
+          done
+
+          echo "New tag: $new_tag"
+          echo "tag=$new_tag" >> $GITHUB_OUTPUT
+
+      # Step 4: Create and push git tag
+      - name: Create Git tag
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag ${{ steps.bump.outputs.tag }}
+          git push origin ${{ steps.bump.outputs.tag }}
+
+      # Step 5: Generate changelog (diff between previous and current tag)
+      - name: Generate Changelog
+        id: changelog
+        run: |
+          curr_tag=${{ steps.bump.outputs.tag }}
+          prev_tag=$(git tag --sort=-v:refname | sed -n 2p || echo "")
+          echo "Prev tag: $prev_tag"
+          echo "Curr tag: $curr_tag"
+
+          if [ -n "$prev_tag" ]; then
+            log=$(git log $prev_tag..$curr_tag --pretty=format:"- %s by %an in %h")
+          else
+            log=$(git log $curr_tag --pretty=format:"- %s by %an in %h")
+          fi
+
+          echo "log<<EOF" >> $GITHUB_OUTPUT
+          echo "$log" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      # Step 6: Create GitHub release
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.bump.outputs.tag }}
+          name: ${{ steps.bump.outputs.tag }}
+          body: ${{ steps.changelog.outputs.log }}
+          prerelease: false   # always a normal release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
