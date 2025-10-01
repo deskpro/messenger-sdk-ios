@@ -19,7 +19,7 @@ jobs:
       - name: Get latest tag
         id: get_tag
         run: |
-          latest=$(git describe --tags --abbrev=0 || echo "0.0.0")
+          latest=$(git tag --sort=-v:refname | head -n 1 || echo "0.0.0")
           echo "latest=$latest" >> $GITHUB_OUTPUT
 
       - name: Determine next version
@@ -28,11 +28,24 @@ jobs:
           latest="${{ steps.get_tag.outputs.latest }}"
           echo "Latest tag: $latest"
 
-          IFS='.' read -r major minor patch <<< "$latest"
-          new_tag="$major.$minor.$((patch+1))"
+          # Makni eventualni -rc suffix
+          base="${latest%%-rc*}"
 
-          # On release branch → add RC suffix
-          if [[ "${GITHUB_REF_NAME}" == "release" ]]; then
+          IFS='.' read -r major minor patch <<< "$base"
+
+          if [[ "${GITHUB_REF_NAME}" == "main" ]]; then
+            # --- Pravi release ---
+            new_tag="$major.$minor.$((patch+1))"
+
+            # Ponavljaj dok ne nađe slobodan tag
+            while git rev-parse "refs/tags/$new_tag" >/dev/null 2>&1; do
+              patch=$((patch+1))
+              new_tag="$major.$minor.$patch"
+            done
+
+          else
+            # --- RC release ---
+            new_tag="$major.$minor.$((patch+1))"
             count=$(git tag --list "${new_tag}-rc*" | wc -l)
             rc=$((count+1))
             new_tag="${new_tag}-rc${rc}"
@@ -54,6 +67,6 @@ jobs:
           tag_name: ${{ steps.bump.outputs.tag }}
           name: ${{ steps.bump.outputs.tag }}
           generate_release_notes: true
-          prerelease: ${{ github.ref_name == 'release' }}
+          prerelease: ${{ github.ref_name != 'main' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
