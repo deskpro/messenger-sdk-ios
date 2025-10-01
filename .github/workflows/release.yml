@@ -1,0 +1,59 @@
+name: SDK Release
+
+on:
+  push:
+    branches:
+      - main
+      - release-automation   # for testing RCs
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # get all tags
+
+      - name: Get latest tag
+        id: get_tag
+        run: |
+          latest=$(git describe --tags --abbrev=0 || echo "0.0.0")
+          echo "latest=$latest" >> $GITHUB_OUTPUT
+
+      - name: Determine next version
+        id: bump
+        run: |
+          latest="${{ steps.get_tag.outputs.latest }}"
+          echo "Latest tag: $latest"
+
+          IFS='.' read -r major minor patch <<< "$latest"
+          new_tag="$major.$minor.$((patch+1))"
+
+          # On release branch → add RC suffix
+          if [[ "${GITHUB_REF_NAME}" == "release" ]]; then
+            count=$(git tag --list "${new_tag}-rc*" | wc -l)
+            rc=$((count+1))
+            new_tag="${new_tag}-rc${rc}"
+          fi
+
+          echo "New tag: $new_tag"
+          echo "tag=$new_tag" >> $GITHUB_OUTPUT
+
+      - name: Create Git tag
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag ${{ steps.bump.outputs.tag }}
+          git push origin ${{ steps.bump.outputs.tag }}
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.bump.outputs.tag }}
+          name: ${{ steps.bump.outputs.tag }}
+          generate_release_notes: true
+          prerelease: ${{ github.ref_name == 'release' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
