@@ -9,7 +9,7 @@
 
 DeskPro iOS Messenger is a Chat/AI/Messaging product. You can embed a “widget” directly into native app, so that enables end-users to use the product. Similar implementation for [Android](https://github.com/deskpro/messenger-sdk-android).
 
-## Requirements
+## Requirements 
 
 - iOS 11.0+
 - Swift 5.7+
