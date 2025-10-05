@@ -2,10 +2,7 @@ name: Messenger SDK iOS CI
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - develop
-  pull_request:
+  pull_request: # run on PRs to any branch
     types:
       - opened
       - synchronize
