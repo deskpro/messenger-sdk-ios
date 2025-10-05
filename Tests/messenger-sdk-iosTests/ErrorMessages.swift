@@ -19,6 +19,8 @@ struct ErrorMessages {
     static var deviceTokenNotNil = formatMessage("The device token is not nil.")
     static var validNotificationData = formatMessage("The notification is valid.")
     static var invalidNotificationData = formatMessage("The notification is not valid.")
+    static var userNotSavedLocally = formatMessage("User was not saved to UserDefaults")
+    static var userNotRetrievedOrDecoded = formatMessage("User JSON could not be retrieved/decoded from UserDefaults")
     
     private static func formatMessage(_ message: String) -> String {
         return "❌\(message)❌"

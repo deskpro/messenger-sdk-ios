@@ -26,4 +26,6 @@ jobs:
         run: xcodebuild -scheme messenger-sdk-ios -destination 'generic/platform=iOS Simulator,name=iPhone' build
 
       - name: Run tests
-        run: xcodebuild -scheme messenger-sdk-ios -destination 'generic/platform=iOS Simulator,name=iPhone' build
+        run: xcodebuild -scheme messenger-sdk-ios -destination 'platform=iOS Simulator,name=iPhone 16' test
+
+

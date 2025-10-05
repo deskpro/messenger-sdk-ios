@@ -31,17 +31,25 @@ final class DeskproSetupTest: XCTestCase {
     func testSetAndGetUserInfo() {
         messenger.setUserInfo(user: user)
         
-        XCTAssertEqual(user, messenger.getUserInfo(), ErrorMessages.usersNotMatching)
+        guard let savedUser = messenger.getUserInfo() else {
+            XCTFail(ErrorMessages.userNotSavedLocally)
+            return
+        }
+        
+        XCTAssertTrue(user.isEqualToUser(savedUser), ErrorMessages.usersNotMatching)
     }
-    
+
     func testSetAndGetUserInfoJson() {
         messenger.setUserInfo(user: user)
         
-        if let jsonString = messenger.getUserInfoJson(),
-           let jsonData = jsonString.data(using: .utf8) {
-            let savedUser = try? JSONDecoder().decode(User.self, from: jsonData)
-            XCTAssertEqual(user, savedUser, ErrorMessages.usersNotMatching)
+        guard let jsonString = messenger.getUserInfoJson(),
+              let jsonData = jsonString.data(using: .utf8),
+              let savedUser = try? JSONDecoder().decode(User.self, from: jsonData) else {
+            XCTFail(ErrorMessages.userNotRetrievedOrDecoded)
+            return
         }
+        
+        XCTAssertTrue(user.isEqualToUser(savedUser), ErrorMessages.usersNotMatching)
     }
     
     func testSetAndGetJwtToken() {
@@ -84,12 +92,20 @@ final class DeskproSetupTest: XCTestCase {
         messenger2.authorizeUser(userJwt: jwtToken2)
         messenger2.setPushRegistrationToken(token: deviceToken2)
         
-        XCTAssertEqual(user2, messenger2.getUserInfo(), ErrorMessages.usersNotMatching)
-        if let jsonString = messenger2.getUserInfoJson(),
-           let jsonData = jsonString.data(using: .utf8) {
-            let savedUser = try? JSONDecoder().decode(User.self, from: jsonData)
-            XCTAssertEqual(user2, savedUser, ErrorMessages.usersNotMatching)
+        guard let savedUser = messenger.getUserInfo() else {
+            XCTFail(ErrorMessages.userNotSavedLocally)
+            return
         }
+        
+        XCTAssertTrue(user.isEqualToUser(savedUser), ErrorMessages.usersNotMatching)
+        guard let jsonString = messenger.getUserInfoJson(),
+              let jsonData = jsonString.data(using: .utf8),
+              let savedUser = try? JSONDecoder().decode(User.self, from: jsonData) else {
+            XCTFail(ErrorMessages.userNotRetrievedOrDecoded)
+            return
+        }
+        XCTAssertTrue(user.isEqualToUser(savedUser), ErrorMessages.usersNotMatching)
+        
         XCTAssertEqual(jwtToken2, messenger2.getJwtToken(), ErrorMessages.tokensNotMatching)
         XCTAssertEqual(deviceToken2, messenger2.getPushRegistrationToken(), ErrorMessages.tokensNotMatching)
     }
