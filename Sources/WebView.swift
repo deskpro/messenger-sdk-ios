@@ -151,6 +151,17 @@ extension CustomWebView: WKNavigationDelegate {
     
     final func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         showActivityIndicator(show: false)
+        
+        if let initialHost = url?.host,
+           let failingHost = webView.url?.host,
+           initialHost == failingHost {
+            showCustomErrorPage(in: webView)
+        } else if webView.url == nil {
+            showCustomErrorPage(in: webView)
+        }
+    }
+    
+    private func showCustomErrorPage(in webView: WKWebView) {
         let htmlFileName = "error_page.html"
         let frameworkBundle = Bundle(for: type(of: self))
         
